@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Code 2027 · The Business of Tech</title>
+<meta name="description" content="Beyond Code 2027: a focused day for 100 tech professionals on everything that happens after the code. Saturday 27 March 2027, 10:00am to 2:00pm.">
+<meta name="theme-color" content="#050109">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind.config.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-night text-snow font-sans antialiased selection:bg-amethyst selection:text-white">
+
+<!-- Fallback icon symbols, shown until the generated 3D images are added -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M14 4c3.5 0 6 2.5 6 6-3 3.5-5 4.5-8 5.5L8.5 12C9.5 9 10.5 7 14 4z"/><circle cx="14.5" cy="9.5" r="1.5"/><path d="M8.5 12.5L4 14l2.5-4.5M11.5 15.5L10 20l4.5-2.5"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 8-12h-6z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4z"/><path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20v-6M10 20V9M16 20v-9M2 20h20M5 8l5-4 4 3 6-5"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 16.5v-9l7 9v-9M6.5 11h11M6.5 13.5h11"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 11l7.6-4M8.2 13l7.6 4"/></symbol>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<header class="fixed inset-x-0 top-0 z-50">
+  <div class="nav-in mx-auto mt-4 flex max-w-6xl items-center justify-between gap-4 rounded-full glass px-5 py-3 sm:px-6">
+    <a href="index.html" class="flex items-center gap-2.5 text-lg font-extrabold tracking-tight">
+      <span class="grid h-8 w-8 place-items-center rounded-xl border border-mist/40 bg-plum"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4"/></svg></span>
+      <span>Beyond Code</span>
+    </a>
+    <nav class="navlinks hidden items-center gap-8 text-sm font-semibold text-haze md:flex" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programme.html">Programme</a>
+      <a href="speakers.html">Speakers</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="register.html" class="inline-flex min-h-[44px] items-center rounded-full bg-mist px-5 text-sm font-extrabold text-ink transition hover:bg-haze">Register</a>
+      <button id="menu-btn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-grape text-mist md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mx-4 mt-2 hidden rounded-3xl glass p-4 md:hidden">
+    <nav class="flex flex-col text-base font-semibold text-haze" aria-label="Mobile">
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="index.html">Home</a>
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="about.html">About</a>
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="programme.html">Programme</a>
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="speakers.html">Speakers</a>
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="register.html">Register</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+  <div aria-hidden="true" class="grid-bg absolute inset-0"></div>
+  <div class="relative mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
+
+    <div class="flex flex-col gap-7">
+      <div class="hero-fade flex flex-wrap items-center gap-3">
+        <span class="rounded-full glass-soft px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-mist">Saturday 27 March 2027 · 10:00am to 2:00pm</span>
+      </div>
+
+      <h1 class="text-[clamp(56px,10vw,132px)] font-extrabold leading-[0.92] tracking-[-0.045em]">
+        <span class="line hero-line"><span>Beyond</span></span>
+        <span class="line hero-line"><span>Code <span class="text-grad">2027</span></span></span>
+      </h1>
+
+      <div class="hero-fade flex flex-col gap-3">
+        <p class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">The Business of Tech</p>
+        <p class="max-w-lg text-lg leading-relaxed text-haze">Everything that happens after the code. One focused day for 100 tech professionals to trade real numbers, honest feedback and useful introductions.</p>
+      </div>
+
+      <div class="hero-fade flex flex-wrap gap-3">
+        <a href="register.html" class="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-mist px-7 text-base font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-haze">
+          Reserve your seat
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="programme.html" class="inline-flex min-h-[52px] items-center rounded-full border border-iris px-7 text-base font-extrabold text-snow transition hover:bg-plum">See the programme</a>
+      </div>
+
+      <dl class="hero-fade mt-2 flex flex-wrap gap-x-10 gap-y-4 border-t border-grape/60 pt-6 text-sm">
+        <div><dt class="text-xs font-extrabold uppercase tracking-[0.16em] text-lilac">Venue</dt><dd class="mt-1 font-bold text-white">[Venue, city] <span class="font-medium text-mist">to be confirmed</span></dd></div>
+        <div><dt class="text-xs font-extrabold uppercase tracking-[0.16em] text-lilac">Seats</dt><dd class="mt-1 font-bold text-white">100, limited</dd></div>
+        <div><dt class="text-xs font-extrabold uppercase tracking-[0.16em] text-lilac">Open to</dt><dd class="mt-1 font-bold text-white">All tech professionals</dd></div>
+      </dl>
+    </div>
+
+    <!-- Hero visual: add assets/hero_cursor.png and the icon_*.png files -->
+    <div id="hero-visual" class="relative mx-auto aspect-square w-full max-w-[540px]">
+      <div aria-hidden="true" class="orbit absolute inset-[4%] rounded-full border border-grape/70"></div>
+      <div aria-hidden="true" class="orbit-rev absolute inset-[16%] rounded-full border border-dashed border-jade/40"></div>
+      <div aria-hidden="true" class="absolute inset-[22%] rounded-full bg-amethyst/25 blur-3xl"></div>
+      <div aria-hidden="true" class="absolute bottom-[8%] right-[10%] h-[38%] w-[38%] rounded-full bg-jade/15 blur-3xl"></div>
+
+      <div id="hero-cursor" class="absolute inset-[18%] grid place-items-center">
+        <!-- fallback glass shape, hidden once hero_cursor.png loads -->
+        <svg class="fallback-cursor h-[72%] w-[72%] drop-shadow-[0_30px_60px_rgba(124,58,237,.5)]" viewBox="0 0 200 220" aria-hidden="true">
+          <defs>
+            <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#DDD0FF" stop-opacity=".9"/>
+              <stop offset=".45" stop-color="#A78BFA" stop-opacity=".7"/>
+              <stop offset="1" stop-color="#4C1D95" stop-opacity=".85"/>
+            </linearGradient>
+          </defs>
+          <path d="M34 14 L34 178 L78 140 L108 202 L136 188 L106 128 L160 128 Z" fill="url(#cg)" stroke="#DDD0FF" stroke-opacity=".55" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <img data-slot id="hero-img" src="assets/hero_cursor.png" alt="" aria-hidden="true" class="absolute inset-[-8%] h-[116%] w-[116%] object-contain" onerror="this.remove()">
+      </div>
+
+      <div class="float-item absolute left-[2%] top-[6%] w-[21%]" data-depth="0.9">
+        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-code"/></svg><img data-slot src="assets/icon_code.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+      </div>
+      <div class="float-item absolute right-[6%] top-[3%] w-[23%]" data-depth="0.5">
+        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-rocket"/></svg><img data-slot src="assets/icon_rocket.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+      </div>
+      <div class="float-item absolute right-[-1%] top-[44%] w-[17%]" data-depth="1.1">
+        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-bolt"/></svg><img data-slot src="assets/icon_bolt.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+      </div>
+      <div class="float-item absolute bottom-[8%] left-[3%] w-[22%]" data-depth="0.7">
+        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-chat"/></svg><img data-slot src="assets/icon_chat.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+      </div>
+      <div class="float-item absolute bottom-[2%] right-[16%] w-[21%]" data-depth="0.4">
+        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-chart"/></svg><img data-slot src="assets/icon_chart.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section aria-hidden="true" class="band border-y border-grape/50 py-5">
+  <div class="overflow-hidden">
+    <div class="marquee-track text-2xl font-extrabold uppercase tracking-tight text-haze/80 sm:text-3xl">
+      <div class="flex shrink-0 items-center gap-8 pr-8">
+        <span>The Market</span><span class="text-jade">/</span><span>The Sale</span><span class="text-jade">/</span><span>The Money</span><span class="text-jade">/</span><span>The Pitch Pit</span><span class="text-jade">/</span><span>The Ask Board</span><span class="text-jade">/</span><span>Office Hours</span><span class="text-jade">/</span>
+      </div>
+      <div class="flex shrink-0 items-center gap-8 pr-8">
+        <span>The Market</span><span class="text-jade">/</span><span>The Sale</span><span class="text-jade">/</span><span>The Money</span><span class="text-jade">/</span><span>The Pitch Pit</span><span class="text-jade">/</span><span>The Ask Board</span><span class="text-jade">/</span><span>Office Hours</span><span class="text-jade">/</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section aria-label="The event in numbers" class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+  <div data-stagger class="grid grid-cols-2 gap-6 lg:grid-cols-4">
+    <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="100">100</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">People</div></div>
+    <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="4">4</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">Hours</div></div>
+    <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="4">4</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">Sessions</div></div>
+    <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="3">3</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">Guest speakers</div></div>
+  </div>
+</section>
+
+<!-- ABOUT TEASER + HIGHLIGHTS -->
+<section id="highlights" class="mx-auto max-w-6xl px-5 pb-24 sm:px-8">
+  <div class="grid gap-10 lg:grid-cols-2 lg:gap-16">
+    <div data-reveal class="flex flex-col gap-5">
+      <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">What Beyond Code is</p>
+      <h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">A room where tech people swap what actually works</h2>
+    </div>
+    <div data-reveal class="flex flex-col items-start gap-5 text-lg leading-relaxed text-haze">
+      <p>Nigerian tech has plenty of events, but too few where people trade real value. Beyond Code fixes that with practical sessions, real numbers and honest feedback, all in one focused day.</p>
+      <a href="about.html" class="inline-flex min-h-[44px] items-center gap-2 text-base font-extrabold text-mint hover:text-white">More about the event
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div data-stagger class="mt-14 grid gap-5 md:grid-cols-3">
+    <div>
+      <article data-tilt class="glass flex h-full flex-col gap-5 rounded-[28px] p-7">
+        <div class="slot aspect-square w-24"><svg class="fallback"><use href="#i-coin"/></svg><img data-slot src="assets/icon_coin.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+        <h3 class="text-2xl font-extrabold tracking-tight text-white">Four practical sessions</h3>
+        <p class="text-base leading-relaxed text-haze">Follow one product from its first customer to its first investor: the market, the sale, the money and a live Pitch Pit.</p>
+      </article>
+    </div>
+    <div>
+      <article data-tilt class="glass flex h-full flex-col gap-5 rounded-[28px] p-7">
+        <div class="slot aspect-square w-24"><svg class="fallback"><use href="#i-mic"/></svg><img data-slot src="assets/icon_mic.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+        <h3 class="text-2xl font-extrabold tracking-tight text-white">The Pitch Pit</h3>
+        <p class="text-base leading-relaxed text-haze">Five founders pitch for 3 minutes each and get 3 minutes of direct feedback from the investor, live in front of the room.</p>
+      </article>
+    </div>
+    <div>
+      <article data-tilt class="glass flex h-full flex-col gap-5 rounded-[28px] p-7">
+        <div class="slot aspect-square w-24"><svg class="fallback"><use href="#i-network"/></svg><img data-slot src="assets/icon_network.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+        <h3 class="text-2xl font-extrabold tracking-tight text-white">Networking that works</h3>
+        <p class="text-base leading-relaxed text-haze">Role coloured badges and the Ask Board help you find the right person in minutes, then investor office hours keep the conversation going.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME PREVIEW -->
+<section class="band border-y border-grape/50">
+  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div data-reveal class="flex max-w-2xl flex-col gap-5">
+        <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">The programme</p>
+        <h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">Four sessions, one product journey</h2>
+      </div>
+      <a href="programme.html" class="inline-flex min-h-[44px] items-center gap-2 text-base font-extrabold text-mint hover:text-white">See the full programme
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div data-stagger class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="glass-soft flex flex-col gap-3 rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">10:10am to 10:45am</p><h3 class="text-xl font-extrabold text-white">The Market</h3><p class="text-base leading-relaxed text-haze">What actually sells in Nigeria, and why.</p></div>
+      <div class="glass-soft flex flex-col gap-3 rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">10:45am to 11:25am</p><h3 class="text-xl font-extrabold text-white">The Sale</h3><p class="text-base leading-relaxed text-haze">A live clinic on pitches, pages and getting paid.</p></div>
+      <div class="glass-soft flex flex-col gap-3 rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">11:40am to 12:10pm</p><h3 class="text-xl font-extrabold text-white">The Money</h3><p class="text-base leading-relaxed text-haze">What investors look for in early stage deals.</p></div>
+      <div class="glass-soft flex flex-col gap-3 rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">12:10pm to 12:40pm</p><h3 class="text-xl font-extrabold text-white">The Pitch Pit</h3><p class="text-base leading-relaxed text-haze">Five founders, 3 minutes each, direct feedback.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKERS: carousel with autoplay below 768px, three column grid above -->
+<section id="speakers" class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <div data-reveal class="flex max-w-2xl flex-col gap-5">
+      <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Guest speakers</p>
+      <h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">Three people who have done the work</h2>
+    </div>
+    <a href="speakers.html" class="inline-flex min-h-[44px] items-center gap-2 text-base font-extrabold text-mint hover:text-white">Meet the speakers
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <div data-carousel role="region" aria-roledescription="carousel" aria-label="Guest speakers" class="mt-12">
+    <div class="carousel" data-stagger>
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+        <article data-tilt class="glass flex h-full flex-col gap-5 rounded-[28px] p-7">
+          <div class="flex items-center justify-between">
+            <div class="grid h-20 w-20 place-items-center rounded-full border border-mist/40 bg-plum text-2xl font-extrabold text-mist" aria-hidden="true">?</div>
+            <span class="rounded-full bg-plum px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-mist">To be announced</span>
+          </div>
+          <div><h3 class="text-2xl font-extrabold tracking-tight text-white">[Speaker name]</h3><p class="mt-1 text-base font-semibold text-mist">Founder or senior operator</p></div>
+          <p class="text-base leading-relaxed text-haze">Built a Nigerian tech product to real revenue and will speak candidly about the hard parts.</p>
+          <p class="mt-auto text-sm font-extrabold uppercase tracking-[0.14em] text-mint">Session 1 · The Market</p>
+        </article>
+      </div>
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+        <article data-tilt class="glass flex h-full flex-col gap-5 rounded-[28px] p-7">
+          <div class="flex items-center justify-between">
+            <div class="grid h-20 w-20 place-items-center rounded-full border border-mist/40 bg-plum text-2xl font-extrabold text-mist" aria-hidden="true">?</div>
+            <span class="rounded-full bg-plum px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-mist">To be announced</span>
+          </div>
+          <div><h3 class="text-2xl font-extrabold tracking-tight text-white">[Speaker name]</h3><p class="mt-1 text-base font-semibold text-mist">Sales leader or marketing strategist</p></div>
+          <p class="text-base leading-relaxed text-haze">Has closed deals for a Nigerian tech product and will rewrite positioning and copy in front of the room.</p>
+          <p class="mt-auto text-sm font-extrabold uppercase tracking-[0.14em] text-mint">Session 2 · The Sale</p>
+        </article>
+      </div>
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+        <article data-tilt class="glass flex h-full flex-col gap-5 rounded-[28px] p-7">
+          <div class="flex items-center justify-between">
+            <div class="grid h-20 w-20 place-items-center rounded-full border border-mist/40 bg-plum text-2xl font-extrabold text-mist" aria-hidden="true">?</div>
+            <span class="rounded-full bg-plum px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-mist">To be announced</span>
+          </div>
+          <div><h3 class="text-2xl font-extrabold tracking-tight text-white">[Speaker name]</h3><p class="mt-1 text-base font-semibold text-mist">Early stage investor</p></div>
+          <p class="text-base leading-relaxed text-haze">Active in Nigerian early stage deals, judges the Pitch Pit and hosts investor office hours.</p>
+          <p class="mt-auto text-sm font-extrabold uppercase tracking-[0.14em] text-mint">Sessions 3 and 4 · Money and Pitch Pit</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="carousel-ui mt-6 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <button type="button" data-prev aria-label="Previous speaker" class="grid h-11 w-11 place-items-center rounded-full border border-grape text-mist"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" data-next aria-label="Next speaker" class="grid h-11 w-11 place-items-center rounded-full border border-grape text-mist"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="flex items-center">
+        <button type="button" data-dot aria-label="Show speaker 1" class="grid h-11 place-items-center px-1"><span class="carousel-dot block"></span></button>
+        <button type="button" data-dot aria-label="Show speaker 2" class="grid h-11 place-items-center px-1"><span class="carousel-dot block"></span></button>
+        <button type="button" data-dot aria-label="Show speaker 3" class="grid h-11 place-items-center px-1"><span class="carousel-dot block"></span></button>
+      </div>
+      <button type="button" data-toggle aria-pressed="false" class="inline-flex min-h-[44px] items-center rounded-full border border-grape px-4 text-sm font-extrabold text-mist"><span data-label>Pause</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ATTEND -->
+<section class="band border-y border-grape/50">
+  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div data-reveal class="flex max-w-2xl flex-col gap-5">
+        <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Why attend</p>
+        <h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">Built to get people talking</h2>
+      </div>
+      <a href="about.html#why" class="inline-flex min-h-[44px] items-center gap-2 text-base font-extrabold text-mint hover:text-white">Why people come
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div data-stagger class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div><article data-tilt class="glass flex h-full flex-col gap-4 rounded-[28px] p-7"><span class="text-5xl font-extrabold tracking-tight text-grad">01</span><h3 class="text-xl font-extrabold text-white">Real numbers</h3><p class="text-base leading-relaxed text-haze">Users, naira, weeks and mistakes. Specifics are what you take home.</p></article></div>
+      <div><article data-tilt class="glass flex h-full flex-col gap-4 rounded-[28px] p-7"><span class="text-5xl font-extrabold tracking-tight text-grad">02</span><h3 class="text-xl font-extrabold text-white">Honest feedback</h3><p class="text-base leading-relaxed text-haze">Live teardowns and the Pitch Pit show what works while you watch.</p></article></div>
+      <div><article data-tilt class="glass flex h-full flex-col gap-4 rounded-[28px] p-7"><span class="text-5xl font-extrabold tracking-tight text-grad">03</span><h3 class="text-xl font-extrabold text-white">The Ask Board</h3><p class="text-base leading-relaxed text-haze">Post one ask and one offer. Matches happen through the break and after the close.</p></article></div>
+      <div><article data-tilt class="glass flex h-full flex-col gap-4 rounded-[28px] p-7"><span class="text-5xl font-extrabold tracking-tight text-grad">04</span><h3 class="text-xl font-extrabold text-white">A laptop to win</h3><p class="text-base leading-relaxed text-haze">One laptop, drawn live at the close. Every ticket includes one free raffle entry.</p></article></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+  <div data-reveal class="cta-card relative overflow-hidden rounded-[36px] px-7 py-14 sm:px-14 sm:py-20">
+    <div aria-hidden="true" class="absolute -right-24 -bottom-32 h-[420px] w-[420px] rounded-full border-2 border-grape/70"></div>
+    <div aria-hidden="true" class="absolute -right-10 -bottom-16 h-[260px] w-[260px] rounded-full bg-jade/25 blur-3xl"></div>
+    <div class="relative flex max-w-2xl flex-col gap-6">
+      <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-mint">Reserve your seat</p>
+      <h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-6xl">100 seats. One Saturday. Bring one ask and one offer.</h2>
+      <div class="flex flex-wrap gap-3">
+        <a href="register.html" class="inline-flex min-h-[52px] items-center rounded-full bg-mist px-7 text-base font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-haze">Register now</a>
+        <a href="https://wa.me/2348059674789?text=Hi%20Sam%2C%20I%20would%20like%20to%20register%20for%20Beyond%20Code%202027." class="inline-flex min-h-[52px] items-center rounded-full border border-iris px-7 text-base font-extrabold text-snow transition hover:bg-grape">Message on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="band border-t border-grape/50">
+  <div class="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-center md:justify-between">
+    <div class="flex flex-col gap-2">
+      <p class="text-xl font-extrabold tracking-tight">Beyond Code <span class="text-grad">2027</span></p>
+      <p class="text-sm text-mist">The Business of Tech · Saturday 27 March 2027 · 10:00am to 2:00pm · [Venue, city]</p>
+      <p class="text-sm text-mist">samuelolu407@gmail.com · WhatsApp 08059674789</p>
+    </div>
+    <nav aria-label="Footer" class="flex flex-wrap gap-x-7 gap-y-2 text-sm font-semibold text-haze">
+      <a class="hover:text-white" href="index.html">Home</a>
+      <a class="hover:text-white" href="about.html">About</a>
+      <a class="hover:text-white" href="programme.html">Programme</a>
+      <a class="hover:text-white" href="speakers.html">Speakers</a>
+      <a class="hover:text-white" href="register.html">Register</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

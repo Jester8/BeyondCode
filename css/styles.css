@@ -1,0 +1,122 @@
+/* Beyond Code 2027: shared styles (Tailwind handles utilities, this file handles the rest) */
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+body {
+  background: #050109;
+  font-family: 'Manrope', system-ui, sans-serif;
+}
+
+/* Black, dark purple and green ambient background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 88% 0%, rgba(76, 29, 149, .55), transparent 70%),
+    radial-gradient(50% 45% at 0% 100%, rgba(5, 150, 105, .30), transparent 70%),
+    radial-gradient(38% 34% at 100% 88%, rgba(16, 185, 129, .15), transparent 70%),
+    radial-gradient(45% 40% at 8% 28%, rgba(46, 16, 101, .50), transparent 70%),
+    #050109;
+}
+
+:focus-visible { outline: 2px solid #C4B5FD; outline-offset: 3px; border-radius: 8px; }
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .03));
+  border: 1px solid rgba(196, 181, 253, .22);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 24px 60px rgba(3, 0, 8, .6);
+}
+.glass-soft {
+  background: rgba(30, 12, 66, .45);
+  border: 1px solid rgba(196, 181, 253, .16);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Black with a faint green tint, used for alternating page bands */
+.band { background: linear-gradient(180deg, rgba(0, 0, 0, .62), rgba(4, 22, 17, .42)); }
+
+.text-grad {
+  background: linear-gradient(120deg, #DDD0FF 0%, #A78BFA 52%, #6EE7B7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(167, 139, 250, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167, 139, 250, .07) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 25%, transparent 72%);
+  mask-image: radial-gradient(ellipse at center, #000 25%, transparent 72%);
+}
+.cta-card {
+  background: linear-gradient(135deg, #2E1065 0%, #1A0A3C 48%, #052E22 100%);
+  border: 1px solid rgba(124, 58, 237, .5);
+}
+
+/* Navigation */
+.navlinks a { transition: color .2s; }
+.navlinks a:hover, .navlinks a[aria-current="page"] { color: #fff; }
+.navlinks a[aria-current="page"] { text-decoration: underline; text-decoration-color: #6EE7B7; text-underline-offset: 8px; text-decoration-thickness: 2px; }
+
+/* Image slots: a glass tile with an icon until a generated 3D image loads */
+.slot {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 28%;
+  background: linear-gradient(145deg, rgba(167, 139, 250, .28), rgba(76, 29, 149, .35));
+  border: 1px solid rgba(196, 181, 253, .35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 18px 40px rgba(3, 0, 8, .65);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.slot .fallback { width: 46%; height: 46%; color: #DDD0FF; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.slot img { position: absolute; inset: -8%; width: 116%; height: 116%; object-fit: contain; pointer-events: none; }
+.slot.has-img { background: none; border: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.slot.has-img .fallback { display: none; }
+
+/* Headline reveal */
+.line { display: block; overflow: hidden; padding-bottom: .06em; }
+.line > span { display: block; will-change: transform; }
+
+.marquee-track { display: flex; width: max-content; will-change: transform; }
+
+/* Speakers: a swipeable, auto sliding carousel below 768px, a three column grid above */
+.carousel {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.carousel::-webkit-scrollbar { display: none; }
+.carousel > .slide { flex: 0 0 84%; scroll-snap-align: start; }
+.carousel-dot { width: 10px; height: 10px; border-radius: 9999px; background: rgba(196, 181, 253, .3); transition: width .3s, background .3s; }
+[data-dot][aria-current="true"] .carousel-dot { width: 28px; background: #6EE7B7; }
+@media (min-width: 768px) {
+  .carousel { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; scroll-snap-type: none; }
+  .carousel > .slide { flex: none; }
+  .carousel-ui { display: none !important; }
+}
+
+/* FAQ accordion */
+details.faq summary { list-style: none; cursor: pointer; }
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq .faq-icon { transition: transform .3s; }
+details.faq[open] .faq-icon { transform: rotate(45deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .carousel { scroll-behavior: auto; }
+}

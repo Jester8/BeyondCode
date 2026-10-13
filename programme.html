@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programme · Beyond Code 2027</title>
+<meta name="description" content="The full run of show for Beyond Code 2027, 10:00am to 2:00pm.">
+<meta name="theme-color" content="#050109">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind.config.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-night text-snow font-sans antialiased selection:bg-amethyst selection:text-white">
+
+<!-- Fallback icon symbols, shown until the generated 3D images are added -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M14 4c3.5 0 6 2.5 6 6-3 3.5-5 4.5-8 5.5L8.5 12C9.5 9 10.5 7 14 4z"/><circle cx="14.5" cy="9.5" r="1.5"/><path d="M8.5 12.5L4 14l2.5-4.5M11.5 15.5L10 20l4.5-2.5"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 8-12h-6z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4z"/><path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20v-6M10 20V9M16 20v-9M2 20h20M5 8l5-4 4 3 6-5"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 16.5v-9l7 9v-9M6.5 11h11M6.5 13.5h11"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 11l7.6-4M8.2 13l7.6 4"/></symbol>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<header class="fixed inset-x-0 top-0 z-50">
+  <div class="nav-in mx-auto mt-4 flex max-w-6xl items-center justify-between gap-4 rounded-full glass px-5 py-3 sm:px-6">
+    <a href="index.html" class="flex items-center gap-2.5 text-lg font-extrabold tracking-tight">
+      <span class="grid h-8 w-8 place-items-center rounded-xl border border-mist/40 bg-plum"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4"/></svg></span>
+      <span>Beyond Code</span>
+    </a>
+    <nav class="navlinks hidden items-center gap-8 text-sm font-semibold text-haze md:flex" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programme.html">Programme</a>
+      <a href="speakers.html">Speakers</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="register.html" class="inline-flex min-h-[44px] items-center rounded-full bg-mist px-5 text-sm font-extrabold text-ink transition hover:bg-haze">Register</a>
+      <button id="menu-btn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-grape text-mist md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mx-4 mt-2 hidden rounded-3xl glass p-4 md:hidden">
+    <nav class="flex flex-col text-base font-semibold text-haze" aria-label="Mobile">
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="index.html">Home</a>
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="about.html">About</a>
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="programme.html">Programme</a>
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="speakers.html">Speakers</a>
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="register.html">Register</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="relative overflow-hidden pt-36 pb-16 md:pt-44 md:pb-20">
+  <div aria-hidden="true" class="grid-bg absolute inset-0"></div>
+  <div class="relative mx-auto flex max-w-6xl flex-col gap-6 px-5 sm:px-8">
+    <p class="hero-fade text-xs font-extrabold uppercase tracking-[0.2em] text-mint">The programme</p>
+    <h1 class="text-[clamp(44px,8vw,96px)] font-extrabold leading-[0.98] tracking-[-0.04em]"><span class="line hero-line"><span>Saturday, hour by hour</span></span></h1>
+    <p class="hero-fade max-w-2xl text-lg leading-relaxed text-haze">Four sessions that follow one product from its first customer to its first investor.</p>
+  </div>
+</section>
+<section class="mx-auto max-w-6xl px-5 pb-16 sm:px-8"><div data-stagger class="grid gap-5 md:grid-cols-3">
+  <div class="glass-soft rounded-3xl p-6"><p class="text-xs font-extrabold uppercase tracking-[0.16em] text-lilac">Date</p><p class="mt-2 text-xl font-extrabold text-white">Saturday 27 March 2027</p></div>
+  <div class="glass-soft rounded-3xl p-6"><p class="text-xs font-extrabold uppercase tracking-[0.16em] text-lilac">Time</p><p class="mt-2 text-xl font-extrabold text-white">10:00am to 2:00pm</p></div>
+  <div class="glass-soft rounded-3xl p-6"><p class="text-xs font-extrabold uppercase tracking-[0.16em] text-lilac">Venue</p><p class="mt-2 text-xl font-extrabold text-white">[Venue, city] to be confirmed</p></div>
+</div></section>
+<section class="band border-y border-grape/50"><div class="mx-auto max-w-4xl px-5 py-24 sm:px-8">
+  <div id="timeline" class="relative">
+    <span aria-hidden="true" class="absolute left-[7px] top-2 bottom-2 w-0.5 bg-grape/50"></span>
+    <span id="tl-fill" aria-hidden="true" class="absolute left-[7px] top-2 bottom-2 w-0.5 origin-top bg-mint"></span>
+    <ol class="flex flex-col gap-6"><li class="tl-item relative pl-10"><span aria-hidden="true" class="absolute left-0 top-2 h-4 w-4 rounded-full border-2 border-mint bg-night"></span><div class="glass-soft rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">10:00am to 10:10am</p><h3 class="mt-1 text-xl font-extrabold text-white">Welcome</h3><p class="mt-2 text-base leading-relaxed text-haze">Sam opens the day, sets the rules of the room and explains the Ask Board.</p></div></li><li class="tl-item relative pl-10"><span aria-hidden="true" class="absolute left-0 top-2 h-4 w-4 rounded-full border-2 border-mint bg-night"></span><div class="glass-soft rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">10:10am to 10:45am</p><h3 class="mt-1 text-xl font-extrabold text-white">Session 1 · The Market</h3><p class="mt-2 text-base leading-relaxed text-haze">Keynote. What actually sells in Nigeria, and why.</p></div></li><li class="tl-item relative pl-10"><span aria-hidden="true" class="absolute left-0 top-2 h-4 w-4 rounded-full border-2 border-mint bg-night"></span><div class="glass-soft rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">10:45am to 11:25am</p><h3 class="mt-1 text-xl font-extrabold text-white">Session 2 · The Sale</h3><p class="mt-2 text-base leading-relaxed text-haze">Sales clinic. Live teardowns of pitches and pages, plus how to get paid.</p></div></li><li class="tl-item relative pl-10"><span aria-hidden="true" class="absolute left-0 top-2 h-4 w-4 rounded-full border-2 border-mint bg-night"></span><div class="glass-soft rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">11:25am to 11:40am</p><h3 class="mt-1 text-xl font-extrabold text-white">Break</h3><p class="mt-2 text-base leading-relaxed text-haze">Networking and the Ask Board. Post one ask, claim one offer.</p></div></li><li class="tl-item relative pl-10"><span aria-hidden="true" class="absolute left-0 top-2 h-4 w-4 rounded-full border-2 border-mint bg-night"></span><div class="glass-soft rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">11:40am to 12:10pm</p><h3 class="mt-1 text-xl font-extrabold text-white">Session 3 · The Money</h3><p class="mt-2 text-base leading-relaxed text-haze">Investor talk. What early stage investors look for and what makes them pass.</p></div></li><li class="tl-item relative pl-10"><span aria-hidden="true" class="absolute left-0 top-2 h-4 w-4 rounded-full border-2 border-mint bg-night"></span><div class="glass-soft rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">12:10pm to 12:40pm</p><h3 class="mt-1 text-xl font-extrabold text-white">Session 4 · The Pitch Pit</h3><p class="mt-2 text-base leading-relaxed text-haze">Five founders, 3 minutes each, then 3 minutes of direct feedback.</p></div></li><li class="tl-item relative pl-10"><span aria-hidden="true" class="absolute left-0 top-2 h-4 w-4 rounded-full border-2 border-mint bg-night"></span><div class="glass-soft rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">12:40pm to 1:00pm</p><h3 class="mt-1 text-xl font-extrabold text-white">Raffle and closing</h3><p class="mt-2 text-base leading-relaxed text-haze">The laptop is drawn live, then the day closes.</p></div></li><li class="tl-item relative pl-10"><span aria-hidden="true" class="absolute left-0 top-2 h-4 w-4 rounded-full border-2 border-mint bg-night"></span><div class="glass-soft rounded-3xl p-6"><p class="text-sm font-extrabold text-mint">1:00pm to 2:00pm</p><h3 class="mt-1 text-xl font-extrabold text-white">Open networking</h3><p class="mt-2 text-base leading-relaxed text-haze">Free mingling and investor office hours.</p></div></li></ol>
+  </div>
+  <p class="mt-10 text-sm text-mist">Timings are the plan and may shift by a few minutes on the day.</p>
+</div></section>
+<section class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+  <div data-reveal class="cta-card relative overflow-hidden rounded-[36px] px-7 py-14 sm:px-14 sm:py-20">
+    <div aria-hidden="true" class="absolute -right-24 -bottom-32 h-[420px] w-[420px] rounded-full border-2 border-grape/70"></div>
+    <div aria-hidden="true" class="absolute -right-10 -bottom-16 h-[260px] w-[260px] rounded-full bg-jade/25 blur-3xl"></div>
+    <div class="relative flex max-w-2xl flex-col gap-6">
+      <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-mint">Reserve your seat</p>
+      <h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">Pick your seat before the 100 are gone.</h2>
+      <div class="flex flex-wrap gap-3">
+        <a href="register.html" class="inline-flex min-h-[52px] items-center rounded-full bg-mist px-7 text-base font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-haze">Register now</a>
+        <a href="https://wa.me/2348059674789?text=Hi%20Sam%2C%20I%20would%20like%20to%20register%20for%20Beyond%20Code%202027." class="inline-flex min-h-[52px] items-center rounded-full border border-iris px-7 text-base font-extrabold text-snow transition hover:bg-grape">Message on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="band border-t border-grape/50">
+  <div class="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-center md:justify-between">
+    <div class="flex flex-col gap-2">
+      <p class="text-xl font-extrabold tracking-tight">Beyond Code <span class="text-grad">2027</span></p>
+      <p class="text-sm text-mist">The Business of Tech · Saturday 27 March 2027 · 10:00am to 2:00pm · [Venue, city]</p>
+      <p class="text-sm text-mist">samuelolu407@gmail.com · WhatsApp 08059674789</p>
+    </div>
+    <nav aria-label="Footer" class="flex flex-wrap gap-x-7 gap-y-2 text-sm font-semibold text-haze">
+      <a class="hover:text-white" href="index.html">Home</a>
+      <a class="hover:text-white" href="about.html">About</a>
+      <a class="hover:text-white" href="programme.html">Programme</a>
+      <a class="hover:text-white" href="speakers.html">Speakers</a>
+      <a class="hover:text-white" href="register.html">Register</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
