@@ -110,6 +110,22 @@ body::before {
 .speaker-dialog[open] { animation: dialog-in .3s ease-out; }
 @keyframes dialog-in { from { opacity: 0; transform: translateY(16px) scale(.97); } to { opacity: 1; transform: none; } }
 
+/* Soft cursor artwork behind a card's text (per-card image set below) */
+.card-cursor { position: relative; overflow: hidden; isolation: isolate; }
+.card-cursor::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--card-bg) var(--card-pos, right center) / cover no-repeat;
+  opacity: .5; transition: opacity .4s, transform .8s;
+}
+.card-cursor::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(to top, rgba(15, 6, 32, .85) 0%, rgba(15, 6, 32, .35) 55%, rgba(15, 6, 32, 0) 100%);
+}
+.card-cursor:hover::before { opacity: .7; transform: scale(1.05); }
+[data-stagger] > div:nth-child(1) > .card-cursor { --card-bg: url("../assets/card_sessions.jpg"); --card-pos: right center; }
+[data-stagger] > div:nth-child(2) > .card-cursor { --card-bg: url("../assets/card_pitch.jpg"); --card-pos: left center; }
+[data-stagger] > div:nth-child(3) > .card-cursor { --card-bg: url("../assets/card_network.jpg"); --card-pos: right center; }
+
 /* FAQ accordion */
 details.faq summary { list-style: none; cursor: pointer; }
 details.faq summary::-webkit-details-marker { display: none; }
