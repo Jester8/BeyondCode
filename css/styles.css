@@ -99,16 +99,19 @@ body::before {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding-bottom: 4px;
+  --sw: 84%;
 }
 .carousel::-webkit-scrollbar { display: none; }
-.carousel > .slide { flex: 0 0 84%; scroll-snap-align: start; }
+.carousel > .slide { flex: 0 0 var(--sw); scroll-snap-align: start; }
+/* spacer so the last slide can scroll to the start, otherwise wide screens barely move */
+.carousel::after { content: ""; flex: 0 0 max(0px, calc(100% - var(--sw) - 16px)); }
 .carousel-dot { width: 10px; height: 10px; border-radius: 9999px; background: rgba(196, 181, 253, .3); transition: width .3s, background .3s; }
 [data-dot][aria-current="true"] .carousel-dot { width: 28px; background: #6EE7B7; }
 @media (min-width: 768px) {
-  .carousel > .slide { flex-basis: 42%; }
+  .carousel { --sw: 42%; }
 }
 @media (min-width: 1024px) {
-  .carousel > .slide { flex-basis: 36%; }
+  .carousel { --sw: 36%; }
 }
 
 /* FAQ accordion */
