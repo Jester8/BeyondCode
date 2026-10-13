@@ -87,7 +87,7 @@
       slides.forEach(function (sl) {
         var c = sl.cloneNode(true);
         c.setAttribute('aria-hidden', 'true');
-        c.querySelectorAll('[tabindex]').forEach(function (el) { el.setAttribute('tabindex', '-1'); });
+        c.querySelectorAll('[tabindex], a').forEach(function (el) { el.setAttribute('tabindex', '-1'); });
         track.appendChild(c);
       });
     }
