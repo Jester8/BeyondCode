@@ -2,6 +2,7 @@
    Libraries: GSAP + ScrollTrigger (motion), Lenis (smooth scroll), Vanilla Tilt (3D card tilt). */
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lenis = null;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   /* Mark the current page in the navigation */
@@ -36,7 +37,7 @@
     else img.addEventListener('load', function () { markLoaded(img); });
   });
 
-  /* Speaker carousel: swipe on small screens, auto slides, pause control, dots and arrows */
+  /* Speaker carousel: swipe, auto slides on every screen size, pause control, dots and arrows */
   document.querySelectorAll('[data-carousel]').forEach(function (root) {
     var track = root.querySelector('.carousel');
     if (!track) return;
@@ -45,7 +46,6 @@
     var prev = root.querySelector('[data-prev]');
     var next = root.querySelector('[data-next]');
     var toggle = root.querySelector('[data-toggle]');
-    var small = window.matchMedia('(max-width: 767px)');
     var idx = 0, timer = null, resumeTimer = null, userPaused = false;
 
     function offsetOf(i) { return slides[i].offsetLeft - slides[0].offsetLeft; }
@@ -68,7 +68,7 @@
     function stop() { clearInterval(timer); timer = null; }
     function start() {
       stop();
-      if (reduce || userPaused || !small.matches) return;
+      if (reduce || userPaused) return;
       timer = setInterval(function () { if (!document.hidden) go(idx + 1); }, 3500);
     }
     function resumeSoon() { clearTimeout(resumeTimer); resumeTimer = setTimeout(start, 4500); }
@@ -93,20 +93,30 @@
         if (userPaused) stop(); else start();
       });
     }
-    small.addEventListener('change', function () {
-      if (!small.matches) { track.scrollLeft = 0; idx = 0; setActive(0); }
-      start();
-    });
     setActive(0);
     start();
   });
+
+  /* Scroll to top arrow in the footer */
+  var footer = document.querySelector('footer > div');
+  if (footer) {
+    var top = document.createElement('button');
+    top.type = 'button';
+    top.setAttribute('aria-label', 'Scroll to top');
+    top.className = 'to-top grid h-12 w-12 shrink-0 place-items-center rounded-full border border-grape text-mint';
+    top.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>';
+    top.addEventListener('click', function () {
+      if (lenis) lenis.scrollTo(0, { duration: 1.4 });
+      else window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
+    footer.appendChild(top);
+  }
 
   if (reduce || !window.gsap) return;
 
   gsap.registerPlugin(ScrollTrigger);
 
   /* Lenis smooth scroll wired into ScrollTrigger */
-  var lenis = null;
   if (window.Lenis) {
     lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
     lenis.on('scroll', ScrollTrigger.update);

@@ -89,7 +89,7 @@ body::before {
 
 .marquee-track { display: flex; width: max-content; will-change: transform; }
 
-/* Speakers: a swipeable, auto sliding carousel below 768px, a three column grid above */
+/* Speakers: a swipeable, auto sliding carousel at every screen size */
 .carousel {
   position: relative;
   display: flex;
@@ -105,9 +105,10 @@ body::before {
 .carousel-dot { width: 10px; height: 10px; border-radius: 9999px; background: rgba(196, 181, 253, .3); transition: width .3s, background .3s; }
 [data-dot][aria-current="true"] .carousel-dot { width: 28px; background: #6EE7B7; }
 @media (min-width: 768px) {
-  .carousel { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; scroll-snap-type: none; }
-  .carousel > .slide { flex: none; }
-  .carousel-ui { display: none !important; }
+  .carousel > .slide { flex-basis: 42%; }
+}
+@media (min-width: 1024px) {
+  .carousel > .slide { flex-basis: 36%; }
 }
 
 /* FAQ accordion */
@@ -120,3 +121,7 @@ details.faq[open] .faq-icon { transform: rotate(45deg); }
   * { animation: none !important; transition: none !important; }
   .carousel { scroll-behavior: auto; }
 }
+
+/* Scroll to top arrow in the footer */
+.to-top { transition: transform .25s, background .25s, border-color .25s; }
+.to-top:hover { transform: translateY(-4px); background: rgba(110, 231, 183, .15); border-color: #6EE7B7; }
