@@ -65,24 +65,21 @@
 <!-- HERO -->
 <section class="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
   <div aria-hidden="true" class="grid-bg absolute inset-0"></div>
-  <div class="relative mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
+  <div class="relative mx-auto grid max-w-6xl items-center gap-y-7 px-5 sm:px-8 lg:grid-cols-2 lg:gap-14">
 
-    <div class="flex flex-col gap-7">
-      <div class="hero-fade flex flex-wrap items-center gap-3">
-        <span class="rounded-full glass-soft px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-mist">Saturday 27 March 2027 · 10:00am to 2:00pm</span>
-      </div>
-
-      <h1 class="text-[clamp(56px,10vw,132px)] font-extrabold leading-[0.92] tracking-[-0.045em]">
+    <div class="contents md:flex md:flex-col md:gap-7">
+      <h1 class="order-1 text-[clamp(56px,10vw,132px)] font-extrabold leading-[0.92] tracking-[-0.045em] md:order-none">
         <span class="line hero-line"><span>Beyond</span></span>
         <span class="line hero-line"><span>Code <span class="text-grad">2027</span></span></span>
       </h1>
 
-      <div class="hero-fade flex flex-col gap-3">
+      <div class="hero-fade order-2 flex flex-col gap-3 md:order-none">
         <p class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">The Business of Tech</p>
-        <p class="max-w-lg text-lg leading-relaxed text-haze">Everything that happens after the code. One focused day for 100 tech professionals to trade real numbers, honest feedback and useful introductions.</p>
       </div>
 
-      <div class="hero-fade flex flex-wrap gap-3">
+      <div class="hero-fade order-4 max-w-lg text-lg leading-relaxed text-haze md:order-none">Everything that happens after the code. One focused day for 100 tech professionals to trade real numbers, honest feedback and useful introductions.</div>
+
+      <div class="hero-fade order-5 flex flex-wrap gap-3 md:order-none">
         <a href="register.html" class="inline-flex min-h-[52px] items-center gap-2 rounded-full bg-mist px-7 text-base font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-haze">
           Reserve your seat
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -90,7 +87,7 @@
         <a href="programme.html" class="inline-flex min-h-[52px] items-center rounded-full border border-iris px-7 text-base font-extrabold text-snow transition hover:bg-plum">See the programme</a>
       </div>
 
-      <dl class="hero-fade mt-2 flex flex-wrap gap-x-10 gap-y-4 border-t border-grape/60 pt-6 text-sm">
+      <dl class="hero-fade order-6 mt-2 flex flex-wrap gap-x-10 gap-y-4 border-t border-grape/60 pt-6 text-sm md:order-none">
         <div><dt class="text-xs font-extrabold uppercase tracking-[0.16em] text-lilac">Venue</dt><dd class="mt-1 font-bold text-white">[Venue, city] <span class="font-medium text-mist">to be confirmed</span></dd></div>
         <div><dt class="text-xs font-extrabold uppercase tracking-[0.16em] text-lilac">Seats</dt><dd class="mt-1 font-bold text-white">100, limited</dd></div>
         <div><dt class="text-xs font-extrabold uppercase tracking-[0.16em] text-lilac">Open to</dt><dd class="mt-1 font-bold text-white">All tech professionals</dd></div>
@@ -98,7 +95,7 @@
     </div>
 
     <!-- Homepage hero artwork: the original cursor image with floating tech icons. -->
-    <div id="hero-visual" class="relative mx-auto aspect-square w-full max-w-[540px]">
+    <div id="hero-visual" class="order-3 relative mx-auto aspect-square w-full max-w-[540px] md:order-none">
       <div aria-hidden="true" class="absolute inset-[22%] rounded-full bg-amethyst/25 blur-3xl"></div>
       <div aria-hidden="true" class="absolute bottom-[8%] right-[10%] h-[38%] w-[38%] rounded-full bg-jade/15 blur-3xl"></div>
 
