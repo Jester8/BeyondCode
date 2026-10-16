@@ -4,18 +4,18 @@ tailwind.config = {
     extend: {
       fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
       colors: {
-        night: '#07100F',
-        ink: '#0B1716',
-        plum: '#15332F',
-        grape: '#28534A',
-        iris: '#316A8D',
-        amethyst: '#4B82B6',
-        lilac: '#A8BED1',
-        mist: '#C8D9E1',
-        haze: '#D4E0DE',
-        snow: '#F5F8F6',
-        jade: '#169778',
-        mint: '#AEE8CE'
+        night: '#050109',
+        ink: '#0B0414',
+        plum: '#2E1065',
+        grape: '#4C1D95',
+        iris: '#6D28D9',
+        amethyst: '#7C3AED',
+        lilac: '#A78BFA',
+        mist: '#C4B5FD',
+        haze: '#DDD0FF',
+        snow: '#F5F0FF',
+        jade: '#10B981',
+        mint: '#6EE7B7'
       }
     }
   }
