@@ -101,15 +101,35 @@
       </dl>
     </div>
 
-    <figure id="hero-visual" class="hero-photo relative mx-auto aspect-[5/4] w-full max-w-[590px] overflow-hidden rounded-[34px] border border-white/15 shadow-[0_32px_90px_rgba(0,0,0,.48)]">
-      <img src="assets/event-hero-speaker.jpg" alt="A Nigerian tech founder speaking to an audience in a blue jacket" width="1672" height="944" class="absolute inset-0 h-full w-full object-cover object-[67%_center]" fetchpriority="high">
-      <div aria-hidden="true" class="hero-photo-shade absolute inset-0"></div>
-      <figcaption class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-7">
-        <span class="max-w-[13rem] text-sm font-bold leading-snug text-white sm:text-base">Real people. Useful conversations. Work that moves forward.</span>
-        <span class="shrink-0 rounded-full border border-white/25 bg-black/30 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[.18em] text-white backdrop-blur-md">Ibadan · 2027</span>
-      </figcaption>
-      <span class="hero-photo-tag absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-extrabold uppercase tracking-[.12em] text-[#17212b] sm:left-7 sm:top-7"><span class="h-2 w-2 rounded-full bg-[#0d916f]"></span> The business of tech</span>
-    </figure>
+    <!-- Homepage hero artwork: the original cursor image with floating tech icons. -->
+    <div id="hero-visual" class="relative mx-auto aspect-square w-full max-w-[540px]">
+      <div aria-hidden="true" class="absolute inset-[22%] rounded-full bg-amethyst/25 blur-3xl"></div>
+      <div aria-hidden="true" class="absolute bottom-[8%] right-[10%] h-[38%] w-[38%] rounded-full bg-jade/15 blur-3xl"></div>
+
+      <div id="hero-cursor" class="absolute inset-[18%] grid place-items-center">
+        <svg class="fallback-cursor h-[72%] w-[72%] drop-shadow-[0_30px_60px_rgba(124,58,237,.5)]" viewBox="0 0 200 220" aria-hidden="true">
+          <defs>
+            <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#DDD0FF" stop-opacity=".9"/>
+              <stop offset=".45" stop-color="#A78BFA" stop-opacity=".7"/>
+              <stop offset="1" stop-color="#4C1D95" stop-opacity=".85"/>
+            </linearGradient>
+          </defs>
+          <path d="M34 14 L34 178 L78 140 L108 202 L136 188 L106 128 L160 128 Z" fill="url(#cg)" stroke="#DDD0FF" stroke-opacity=".55" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <img data-slot id="hero-img" src="assets/hero_cursor.png" alt="" aria-hidden="true" class="absolute inset-[-8%] h-[116%] w-[116%] object-contain" onerror="this.remove()">
+      </div>
+
+      <div class="float-item absolute left-[2%] top-[6%] w-[21%]" data-depth="0.9">
+        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-code"/></svg><img data-slot src="assets/icon_code.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+      </div>
+      <div class="float-item absolute right-[6%] top-[3%] w-[23%]" data-depth="0.5">
+        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-rocket"/></svg><img data-slot src="assets/icon_rocket.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+      </div>
+      <div class="float-item absolute right-[-1%] top-[44%] w-[17%]" data-depth="1.1">
+        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-bolt"/></svg><img data-slot src="assets/icon_bolt.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -314,7 +334,6 @@
     <div class="raffle-visual relative min-h-[300px] overflow-hidden lg:min-h-[520px]">
       <img src="assets/laptop-raffle.jpg" alt="A laptop set out for the live event raffle draw" width="1448" height="1088" loading="lazy" class="absolute inset-0 h-full w-full object-cover object-center">
       <div aria-hidden="true" class="raffle-image-shade absolute inset-0"></div>
-      <div class="raffle-stamp absolute bottom-6 right-6 grid h-24 w-24 place-items-center rounded-full border border-white/45 bg-black/35 text-center text-[10px] font-extrabold uppercase leading-tight tracking-[.12em] text-white backdrop-blur-md sm:bottom-8 sm:right-8 sm:h-28 sm:w-28">One winner<br><span class="text-[#aee8ce]">Live draw</span></div>
     </div>
   </div>
 </section>
