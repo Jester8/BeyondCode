@@ -41,6 +41,7 @@
       <a href="about.html">About</a>
       <a href="programme.html">Programme</a>
       <a href="speakers.html">Speakers</a>
+      <a href="#raffle">Laptop raffle</a>
       <a href="#sponsors">Sponsors</a>
     </nav>
     <div class="flex items-center gap-2">
@@ -56,6 +57,7 @@
       <a class="rounded-xl px-4 py-3 hover:bg-plum" href="about.html">About</a>
       <a class="rounded-xl px-4 py-3 hover:bg-plum" href="programme.html">Programme</a>
       <a class="rounded-xl px-4 py-3 hover:bg-plum" href="speakers.html">Speakers</a>
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="#raffle">Laptop raffle</a>
       <a class="rounded-xl px-4 py-3 hover:bg-plum" href="#sponsors">Sponsors</a>
       <a class="rounded-xl px-4 py-3 hover:bg-plum" href="register.html">Register</a>
     </nav>
@@ -99,36 +101,15 @@
       </dl>
     </div>
 
-    <!-- Hero visual: hero_cursor.png plus three floating icons: code, rocket and bolt -->
-    <div id="hero-visual" class="relative mx-auto aspect-square w-full max-w-[540px]">
-      <div aria-hidden="true" class="absolute inset-[22%] rounded-full bg-amethyst/25 blur-3xl"></div>
-      <div aria-hidden="true" class="absolute bottom-[8%] right-[10%] h-[38%] w-[38%] rounded-full bg-jade/15 blur-3xl"></div>
-
-      <div id="hero-cursor" class="absolute inset-[18%] grid place-items-center">
-        <!-- fallback glass shape, hidden once hero_cursor.png loads -->
-        <svg class="fallback-cursor h-[72%] w-[72%] drop-shadow-[0_30px_60px_rgba(124,58,237,.5)]" viewBox="0 0 200 220" aria-hidden="true">
-          <defs>
-            <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#DDD0FF" stop-opacity=".9"/>
-              <stop offset=".45" stop-color="#A78BFA" stop-opacity=".7"/>
-              <stop offset="1" stop-color="#4C1D95" stop-opacity=".85"/>
-            </linearGradient>
-          </defs>
-          <path d="M34 14 L34 178 L78 140 L108 202 L136 188 L106 128 L160 128 Z" fill="url(#cg)" stroke="#DDD0FF" stroke-opacity=".55" stroke-width="2.5" stroke-linejoin="round"/>
-        </svg>
-        <img data-slot id="hero-img" src="assets/hero_cursor.png" alt="" aria-hidden="true" class="absolute inset-[-8%] h-[116%] w-[116%] object-contain" onerror="this.remove()">
-      </div>
-
-      <div class="float-item absolute left-[2%] top-[6%] w-[21%]" data-depth="0.9">
-        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-code"/></svg><img data-slot src="assets/icon_code.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
-      </div>
-      <div class="float-item absolute right-[6%] top-[3%] w-[23%]" data-depth="0.5">
-        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-rocket"/></svg><img data-slot src="assets/icon_rocket.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
-      </div>
-      <div class="float-item absolute right-[-1%] top-[44%] w-[17%]" data-depth="1.1">
-        <div class="slot float-in aspect-square"><svg class="fallback"><use href="#i-bolt"/></svg><img data-slot src="assets/icon_bolt.png" alt="" aria-hidden="true" onerror="this.remove()"></div>
-      </div>
-    </div>
+    <figure id="hero-visual" class="hero-photo relative mx-auto aspect-[5/4] w-full max-w-[590px] overflow-hidden rounded-[34px] border border-white/15 shadow-[0_32px_90px_rgba(0,0,0,.48)]">
+      <img src="assets/event-hero-speaker.jpg" alt="A Nigerian tech founder speaking to an audience in a blue jacket" width="1672" height="944" class="absolute inset-0 h-full w-full object-cover object-[67%_center]" fetchpriority="high">
+      <div aria-hidden="true" class="hero-photo-shade absolute inset-0"></div>
+      <figcaption class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-7">
+        <span class="max-w-[13rem] text-sm font-bold leading-snug text-white sm:text-base">Real people. Useful conversations. Work that moves forward.</span>
+        <span class="shrink-0 rounded-full border border-white/25 bg-black/30 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[.18em] text-white backdrop-blur-md">Ibadan · 2027</span>
+      </figcaption>
+      <span class="hero-photo-tag absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-extrabold uppercase tracking-[.12em] text-[#17212b] sm:left-7 sm:top-7"><span class="h-2 w-2 rounded-full bg-[#0d916f]"></span> The business of tech</span>
+    </figure>
   </div>
 </section>
 
@@ -153,6 +134,29 @@
     <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="4">4</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">Hours</div></div>
     <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="4">4</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">Sessions</div></div>
     <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="3">3</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">Guest speakers</div></div>
+  </div>
+</section>
+
+<!-- THE ROOM -->
+<section class="mx-auto max-w-6xl px-5 pb-24 sm:px-8">
+  <div class="mb-10 flex flex-wrap items-end justify-between gap-5">
+    <div data-reveal class="flex max-w-2xl flex-col gap-4">
+      <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Inside the room</p>
+      <h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">Come for the insight. Leave with people in your corner.</h2>
+    </div>
+    <p class="max-w-md text-base leading-relaxed text-haze">Small-room energy, honest work sessions and introductions that can continue long after the event.</p>
+  </div>
+  <div class="event-photo-grid grid gap-5 md:grid-cols-[1.2fr_.8fr]">
+    <figure data-reveal class="event-photo event-photo-wide relative min-h-[300px] overflow-hidden rounded-[30px] border border-white/10 sm:min-h-[410px]">
+      <img src="assets/workshop-collaboration.jpg" alt="Nigerian technology professionals working through an idea together at a laptop" width="1672" height="944" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+      <div class="photo-shade absolute inset-0"></div>
+      <figcaption class="absolute bottom-0 left-0 p-6 sm:p-8"><span class="mb-2 block text-xs font-extrabold uppercase tracking-[.18em] text-[#aee8ce]">Learn by doing</span><span class="block max-w-sm text-2xl font-extrabold leading-tight text-white sm:text-3xl">Ideas get sharper when you work through them together.</span></figcaption>
+    </figure>
+    <figure data-reveal class="event-photo relative min-h-[300px] overflow-hidden rounded-[30px] border border-white/10 sm:min-h-[410px]">
+      <img src="assets/event-networking.jpg" alt="Attendees meeting and sharing ideas during a technology event" width="1672" height="944" loading="lazy" class="absolute inset-0 h-full w-full object-cover object-center">
+      <div class="photo-shade absolute inset-0"></div>
+      <figcaption class="absolute bottom-0 left-0 p-6 sm:p-8"><span class="mb-2 block text-xs font-extrabold uppercase tracking-[.18em] text-[#aee8ce]">Meet your people</span><span class="block max-w-sm text-2xl font-extrabold leading-tight text-white sm:text-3xl">Make the introduction that opens the next door.</span></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -297,6 +301,24 @@
   </div>
 </section>
 
+<!-- LAPTOP RAFFLE -->
+<section id="raffle" class="raffle-section mx-auto max-w-6xl scroll-mt-28 px-5 py-10 sm:px-8">
+  <div data-reveal class="raffle-card relative grid overflow-hidden rounded-[34px] border border-white/15 lg:grid-cols-[.88fr_1.12fr]">
+    <div class="raffle-copy relative z-10 flex flex-col items-start justify-center gap-5 p-7 sm:p-10 lg:p-12">
+      <p class="inline-flex items-center gap-2 rounded-full border border-[#aee8ce]/35 bg-[#aee8ce]/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[.16em] text-[#aee8ce]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8H7a3 3 0 1 1 3-3c0 2 2 3 2 3Zm0 0h5a3 3 0 1 0-3-3c0 2-2 3-2 3Z"/></svg> Live at the close</p>
+      <h2 class="max-w-xl text-4xl font-extrabold leading-[1.02] tracking-[-.035em] text-white sm:text-5xl lg:text-6xl">Stay for the draw. Go home with a laptop.</h2>
+      <p class="max-w-lg text-lg leading-relaxed text-white/75">One laptop will be drawn live as we close the day. Every event ticket includes one free raffle entry.</p>
+      <a href="register.html" class="inline-flex min-h-[50px] items-center gap-3 rounded-full bg-white px-6 text-sm font-extrabold text-[#101716] transition hover:-translate-y-0.5 hover:bg-[#aee8ce]">Get your event ticket <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p class="text-xs font-semibold text-white/50">Raffle draw is part of the event closing session.</p>
+    </div>
+    <div class="raffle-visual relative min-h-[300px] overflow-hidden lg:min-h-[520px]">
+      <img src="assets/laptop-raffle.jpg" alt="A laptop set out for the live event raffle draw" width="1448" height="1088" loading="lazy" class="absolute inset-0 h-full w-full object-cover object-center">
+      <div aria-hidden="true" class="raffle-image-shade absolute inset-0"></div>
+      <div class="raffle-stamp absolute bottom-6 right-6 grid h-24 w-24 place-items-center rounded-full border border-white/45 bg-black/35 text-center text-[10px] font-extrabold uppercase leading-tight tracking-[.12em] text-white backdrop-blur-md sm:bottom-8 sm:right-8 sm:h-28 sm:w-28">One winner<br><span class="text-[#aee8ce]">Live draw</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- SPONSORS -->
 <section id="sponsors" class="band border-y border-grape/50">
   <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
@@ -347,6 +369,7 @@
       <a class="hover:text-white" href="about.html">About</a>
       <a class="hover:text-white" href="programme.html">Programme</a>
       <a class="hover:text-white" href="speakers.html">Speakers</a>
+      <a class="hover:text-white" href="#raffle">Laptop raffle</a>
       <a class="hover:text-white" href="index.html#sponsors">Sponsors</a>
       <a class="hover:text-white" href="register.html">Register</a>
     </nav>

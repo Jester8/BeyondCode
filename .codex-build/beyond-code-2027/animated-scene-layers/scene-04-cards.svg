@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <g>
+      <rect x="128" y="752" width="332" height="124" rx="20" fill="#20142B" fill-opacity="0.62" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5"/>
+      <circle cx="180" cy="814" r="31" fill="#FFFFFF" fill-opacity="0.10"/>
+      <g transform="translate(160 794)" fill="none" stroke="#AEE8CE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="5" width="26" height="22" rx="3"/><path d="M3 34h34l-4-7H7l-4 7Z"/><path d="m16 12-4 4 4 4M24 12l4 4-4 4"/></g>
+      <text x="226" y="805" font-family="Avenir Next" font-size="21" font-weight="700" letter-spacing="1.1" fill="#AEE8CE">BUILD LIVE</text>
+      <text x="226" y="841" font-family="Avenir Next" font-size="17" font-weight="500" fill="#FFFFFF" fill-opacity="0.87">Review · test · ship</text>
+    </g>
+<g>
+      <rect x="484" y="752" width="332" height="124" rx="20" fill="#20142B" fill-opacity="0.62" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5"/>
+      <circle cx="536" cy="814" r="31" fill="#FFFFFF" fill-opacity="0.10"/>
+      <g transform="translate(516 794)" fill="none" stroke="#AEE8CE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3 8 22h10l-2 15 16-22H21l2-12Z"/></g>
+      <text x="582" y="805" font-family="Avenir Next" font-size="21" font-weight="700" letter-spacing="1.1" fill="#AEE8CE">REAL CONTEXT</text>
+      <text x="582" y="841" font-family="Avenir Next" font-size="17" font-weight="500" fill="#FFFFFF" fill-opacity="0.87">AI · local payments · networks</text>
+    </g>
+<g>
+      <rect x="840" y="752" width="332" height="124" rx="20" fill="#20142B" fill-opacity="0.62" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5"/>
+      <circle cx="892" cy="814" r="31" fill="#FFFFFF" fill-opacity="0.10"/>
+      <g transform="translate(872 794)" fill="none" stroke="#AEE8CE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h30v22H18l-9 7v-7H5V7Z"/><path d="M12 15h16M12 21h11"/></g>
+      <text x="938" y="805" font-family="Avenir Next" font-size="21" font-weight="700" letter-spacing="1.1" fill="#AEE8CE">OPEN Q&amp;A</text>
+      <text x="938" y="841" font-family="Avenir Next" font-size="17" font-weight="500" fill="#FFFFFF" fill-opacity="0.87">Bring questions into the room</text>
+    </g>
+</svg>
