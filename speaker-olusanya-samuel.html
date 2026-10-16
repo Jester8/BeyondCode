@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Olusanya Samuel · Beyond Code 2027</title>
-<meta name="description" content="Olusanya Samuel, Software Engineer at NCDF Group, speaks at Beyond Code 2027.">
+<title>Olusanya Samuel A. · Beyond Code 2027</title>
+<meta name="description" content="Meet Olusanya Samuel A., a full-stack software developer with 5+ years of experience building web and mobile products from idea to production.">
 <meta name="theme-color" content="#050109">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,20 +33,20 @@
 <!-- NAV -->
 <header class="fixed inset-x-0 top-0 z-50">
   <div class="nav-in mx-auto mt-4 flex max-w-6xl items-center justify-between gap-4 rounded-full glass px-5 py-3 sm:px-6">
-    <a href="index.html" class="flex items-center gap-2.5 text-lg font-extrabold tracking-tight">
-      <span class="grid h-8 w-8 place-items-center rounded-xl border border-mist/40 bg-plum"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4"/></svg></span>
-      <span>Beyond Code</span>
+    <a href="index.html" class="brand-link flex items-center" aria-label="Beyond Code home">
+      <img class="brand-logo" src="assets/beyond-code-logo-white.png" alt="Beyond Code">
     </a>
     <nav class="navlinks hidden items-center gap-8 text-sm font-semibold text-haze md:flex" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="programme.html">Programme</a>
       <a href="speakers.html">Speakers</a>
+      <a href="index.html#sponsors">Sponsors</a>
     </nav>
     <div class="flex items-center gap-2">
       <a href="register.html" class="inline-flex min-h-[44px] items-center rounded-full bg-mist px-5 text-sm font-extrabold text-ink transition hover:bg-haze">Register</a>
       <button id="menu-btn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-grape text-mist md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-menu-icon class="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="menu-line-top" d="M4 7h16"/><path class="menu-line-middle" d="M4 12h16"/><path class="menu-line-bottom" d="M4 17h16"/></svg>
       </button>
     </div>
   </div>
@@ -56,6 +56,7 @@
       <a class="rounded-xl px-4 py-3 hover:bg-plum" href="about.html">About</a>
       <a class="rounded-xl px-4 py-3 hover:bg-plum" href="programme.html">Programme</a>
       <a class="rounded-xl px-4 py-3 hover:bg-plum" href="speakers.html">Speakers</a>
+      <a class="rounded-xl px-4 py-3 hover:bg-plum" href="index.html#sponsors">Sponsors</a>
       <a class="rounded-xl px-4 py-3 hover:bg-plum" href="register.html">Register</a>
     </nav>
   </div>
@@ -64,27 +65,47 @@
 <main id="top">
 <section class="relative overflow-hidden pt-36 pb-16 md:pt-44 md:pb-20">
   <div aria-hidden="true" class="grid-bg absolute inset-0"></div>
-  <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 md:grid-cols-2">
+  <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 xl:grid-cols-2">
     <div class="flex flex-col gap-6">
       <a href="speakers.html" class="hero-fade inline-flex min-h-[44px] items-center gap-2 text-base font-extrabold text-mint hover:text-white"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> All speakers</a>
       <p class="hero-fade text-xs font-extrabold uppercase tracking-[0.2em] text-mint">Guest speaker · Session 1 · The Market</p>
-      <h1 class="text-[clamp(44px,7vw,84px)] font-extrabold leading-[0.98] tracking-[-0.04em]"><span class="line hero-line"><span>Olusanya Samuel</span></span></h1>
-      <p class="hero-fade text-xl font-semibold text-mist">Software Engineer, NCDF Group</p>
-      <p class="hero-fade max-w-xl text-lg leading-relaxed text-haze">Olusanya is a software engineer at NCDF Group with five years of experience and a background in computer engineering.</p>
-      <div class="hero-fade flex flex-wrap gap-3">
-        <a href="register.html" class="inline-flex min-h-[52px] items-center rounded-full bg-mist px-7 text-base font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-haze">Register now</a>
+      <h1 class="text-[clamp(44px,7vw,84px)] font-extrabold leading-[0.98] tracking-[-0.04em]"><span class="line hero-line"><span>Olusanya Samuel A.</span></span></h1>
+      <div class="hero-fade mx-auto w-full max-w-sm xl:hidden">
+        <img src="assets/speaker_1_full.jpg" alt="Olusanya Samuel A." width="900" height="1126" class="h-auto w-full rounded-[32px] border border-mist/40 shadow-[0_30px_80px_rgba(124,58,237,.35)]">
       </div>
+      <p class="hero-fade text-xl font-semibold text-mist">Full-stack Developer · 5+ years of experience</p>
+      <p class="hero-fade max-w-xl text-lg leading-relaxed text-haze">Based in Ibadan, Nigeria, Olusanya builds responsive, scalable web and mobile products. He focuses on clean architecture, thoughtful user experience, visual quality and performance.</p>
     </div>
-    <div class="hero-fade mx-auto w-full max-w-md">
-      <img src="assets/speaker_1_full.jpg" alt="Olusanya Samuel" width="900" height="1126" class="h-auto w-full rounded-[32px] border border-mist/40 shadow-[0_30px_80px_rgba(124,58,237,.35)]">
+    <div class="hero-fade mx-auto hidden w-full max-w-md xl:block">
+      <img src="assets/speaker_1_full.jpg" alt="Olusanya Samuel A." width="900" height="1126" class="h-auto w-full rounded-[32px] border border-mist/40 shadow-[0_30px_80px_rgba(124,58,237,.35)]">
     </div>
   </div>
 </section>
 
 <section class="band border-y border-grape/50"><div class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
-  <div data-reveal class="flex max-w-2xl flex-col gap-5"><p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">At a glance</p><h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">Olusanya Samuel</h2></div>
-  <div data-stagger class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"><div><article data-tilt class="glass flex h-full flex-col gap-2 rounded-[28px] p-7"><p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Role</p><p class="text-2xl font-extrabold text-white">Software Engineer</p></article></div><div><article data-tilt class="glass flex h-full flex-col gap-2 rounded-[28px] p-7"><p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Company</p><p class="text-2xl font-extrabold text-white">NCDF Group</p></article></div><div><article data-tilt class="glass flex h-full flex-col gap-2 rounded-[28px] p-7"><p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Experience</p><p class="text-2xl font-extrabold text-white">5 years</p></article></div><div><article data-tilt class="glass flex h-full flex-col gap-2 rounded-[28px] p-7"><p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Background</p><p class="text-2xl font-extrabold text-white">Computer engineering</p></article></div></div>
+  <div data-reveal class="flex max-w-2xl flex-col gap-5"><p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">At a glance</p><h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">Olusanya Samuel A.</h2></div>
+  <div data-stagger class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"><div><article data-tilt class="glass flex h-full flex-col gap-2 rounded-[28px] p-7"><p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Role</p><p class="text-2xl font-extrabold text-white">Full-stack Developer</p></article></div><div><article data-tilt class="glass flex h-full flex-col gap-2 rounded-[28px] p-7"><p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Experience</p><p class="text-2xl font-extrabold text-white">5+ years</p></article></div><div><article data-tilt class="glass flex h-full flex-col gap-2 rounded-[28px] p-7"><p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Location</p><p class="text-2xl font-extrabold text-white">Ibadan, Nigeria</p></article></div><div><article data-tilt class="glass flex h-full flex-col gap-2 rounded-[28px] p-7"><p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">Focus</p><p class="text-2xl font-extrabold text-white">Web &amp; mobile apps</p></article></div></div>
 </div></section>
+<section class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+  <div class="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+    <div data-reveal class="flex flex-col gap-5">
+      <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-lilac">About Olusanya</p>
+      <h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">From the first idea to production.</h2>
+    </div>
+    <div data-reveal class="flex max-w-3xl flex-col gap-5 text-lg leading-relaxed text-haze">
+      <p>Olusanya Samuel A. is a full-stack software developer based in Ibadan, Nigeria, with more than five years of professional experience. He builds responsive, scalable web and mobile applications and enjoys carrying a product from an early idea through implementation and into production.</p>
+      <p>His approach brings together clean architecture, maintainable code and careful attention to user experience, visual detail and performance. He has worked with different teams and organizations to build and ship software, and is especially interested in the decisions that make a product useful, reliable and ready to grow.</p>
+      <p>Olusanya has a background in Computer Engineering and is pursuing postgraduate studies in Software Engineering. He also shares what he learns with the tech community. Through Beyond Code, he hosts conversations about the full product journey: understanding a market, building and selling a product, finding investment and turning technical work into practical value.</p>
+      <p>His public project work has included Agrochain, an agri-tech initiative exploring secure digital records for farmers and better access to markets, credit, insurance and export opportunities.</p>
+    </div>
+  </div>
+  <div data-reveal class="mt-10 flex flex-wrap gap-3" aria-label="Areas of focus">
+    <span class="glass-soft rounded-full px-4 py-2 text-sm font-bold text-haze">Full-stack product engineering</span>
+    <span class="glass-soft rounded-full px-4 py-2 text-sm font-bold text-haze">Web and mobile apps</span>
+    <span class="glass-soft rounded-full px-4 py-2 text-sm font-bold text-haze">Clean architecture</span>
+    <span class="glass-soft rounded-full px-4 py-2 text-sm font-bold text-haze">UI/UX and performance</span>
+  </div>
+</section>
 <section class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
   <div data-reveal class="cta-card relative overflow-hidden rounded-[36px] px-7 py-14 sm:px-14 sm:py-20">
     <div aria-hidden="true" class="absolute -right-24 -bottom-32 h-[420px] w-[420px] rounded-full border-2 border-grape/70"></div>
@@ -93,7 +114,6 @@
       <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-mint">Reserve your seat</p>
       <h2 class="text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">Hear them in person. 100 seats only.</h2>
       <div class="flex flex-wrap gap-3">
-        <a href="register.html" class="inline-flex min-h-[52px] items-center rounded-full bg-mist px-7 text-base font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-haze">Register now</a>
         <a href="https://wa.me/2348059674789?text=Hi%20Sam%2C%20I%20would%20like%20to%20register%20for%20Beyond%20Code%202027." class="inline-flex min-h-[52px] items-center rounded-full border border-iris px-7 text-base font-extrabold text-snow transition hover:bg-grape">Message on WhatsApp</a>
       </div>
     </div>
@@ -104,7 +124,9 @@
 <footer class="band border-t border-grape/50">
   <div class="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-center md:justify-between">
     <div class="flex flex-col gap-2">
-      <p class="text-xl font-extrabold tracking-tight">Beyond Code <span class="text-grad">2027</span></p>
+      <div class="flex items-center gap-3">
+        <img class="brand-logo brand-logo-footer" src="assets/beyond-code-logo-white.png" alt="Beyond Code">
+      </div>
       <p class="text-sm text-mist">The Business of Tech · Saturday 27 March 2027 · 10:00am to 2:00pm · [Venue, city]</p>
       <p class="text-sm text-mist">samuelolu407@gmail.com · WhatsApp 08059674789</p>
     </div>
@@ -113,6 +135,7 @@
       <a class="hover:text-white" href="about.html">About</a>
       <a class="hover:text-white" href="programme.html">Programme</a>
       <a class="hover:text-white" href="speakers.html">Speakers</a>
+      <a class="hover:text-white" href="index.html#sponsors">Sponsors</a>
       <a class="hover:text-white" href="register.html">Register</a>
     </nav>
   </div>
@@ -122,6 +145,6 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/main.js?v=2"></script>
 </body>
 </html>

@@ -62,9 +62,22 @@ body::before {
 }
 
 /* Navigation */
+.brand-link { flex-shrink: 0; }
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 46px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, .35));
+}
+.brand-logo-footer { height: 56px; }
 .navlinks a { transition: color .2s; }
 .navlinks a:hover, .navlinks a[aria-current="page"] { color: #fff; }
 .navlinks a[aria-current="page"] { text-decoration: underline; text-decoration-color: #6EE7B7; text-underline-offset: 8px; text-decoration-thickness: 2px; }
+.menu-icon path { transform-box: fill-box; transform-origin: center; transition: transform .2s ease, opacity .2s ease; }
+.menu-icon.is-open .menu-line-top { transform: translateY(5px) rotate(45deg); }
+.menu-icon.is-open .menu-line-middle { opacity: 0; }
+.menu-icon.is-open .menu-line-bottom { transform: translateY(-5px) rotate(-45deg); }
 
 /* Image slots: a glass tile with an icon until a generated 3D image loads */
 .slot {
