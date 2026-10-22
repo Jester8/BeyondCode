@@ -138,7 +138,7 @@
     <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="100">100</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">People</div></div>
     <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="4">4</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">Hours</div></div>
     <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="4">4</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">Sessions</div></div>
-    <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="3">3</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">Guest speakers</div></div>
+    <div class="flex flex-col gap-1"><div class="text-6xl font-extrabold tracking-tight text-white"><span data-count="5">5</span></div><div class="text-xs font-extrabold uppercase tracking-[0.18em] text-mint">Guest speakers</div></div>
   </div>
 </section>
 
@@ -223,7 +223,7 @@
   </div>
 </section>
 
-<!-- SPEAKERS: auto sliding carousel at every screen size -->
+<!-- SPEAKERS: static responsive grid; no auto-sliding -->
 <section id="speakers" class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
   <div class="flex flex-wrap items-end justify-between gap-6">
     <div data-reveal class="flex max-w-2xl flex-col gap-5">
@@ -237,21 +237,22 @@
 
   <div data-carousel role="region" aria-roledescription="carousel" aria-label="Guest speakers" class="mt-12">
     <div class="carousel" data-stagger>
-      <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="Speaker 1">
         <a href="speaker-olusanya-samuel.html" data-tilt aria-label="View profile of Olusanya Samuel A." class="glass flex h-full flex-col overflow-hidden rounded-[28px]">
-          <div class="relative h-[320px] bg-plum"><img src="assets/speaker_1_full.jpg" alt="Olusanya Samuel A." class="h-full w-full object-cover object-top" loading="lazy"><span class="absolute right-3 top-3 rounded-full bg-night/70 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-mint">Speaker</span></div>
+          <div class="relative h-[320px] bg-plum"><img src="assets/sam-web.jpg" alt="Olusanya Samuel A." class="h-full w-full object-cover object-top" loading="lazy"><span class="absolute right-3 top-3 rounded-full bg-night/70 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-mint">Speaker</span></div>
           <div class="flex flex-1 flex-col gap-1 p-6">
-            <h3 class="text-2xl font-extrabold tracking-tight text-white">Olusanya Samuel A.</h3>
-            <p class="text-base font-semibold text-mist">Full-stack Developer · 5+ years experience</p>
-            <p class="mt-auto pt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-mint">Session 1 · The Market</p>
-            <span class="inline-flex items-center gap-2 text-sm font-extrabold text-white">View profile <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <h3 class="text-2xl font-extrabold tracking-tight text-white">Olusanya Samuel</h3>
+            <p class="text-base font-semibold text-mist">Software Engineer, NCDF</p>
+            <p class="mt-auto pt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-mint">Convener, Beyond Code</p>
+            <!-- <p class="mt-auto pt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-mint">Session 1 · The Market</p>
+            <span class="inline-flex items-center gap-2 text-sm font-extrabold text-white">View profile <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span> -->
           </div>
         </a>
       </div>
-      <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="Speaker 2">
         <article data-tilt class="glass flex h-full flex-col overflow-hidden rounded-[28px]">
           <div class="relative h-[320px] bg-plum">
-            <img src="./assets//tope.jpg" alt="Tope James Moses" class="h-full w-full object-cover object-top" loading="lazy" onerror="this.style.display='none'">
+            <img src="assets/tope.jpg" alt="Tope James Moses" class="h-full w-full object-cover object-top" loading="lazy" onerror="this.style.display='none'">
             <span class="absolute right-3 top-3 rounded-full bg-night/70 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-mint">Speaker</span>
           </div>
           <div class="flex flex-1 flex-col gap-1 p-6">
@@ -261,30 +262,50 @@
           </div>
         </article>
       </div>
-      <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="Speaker 3">
         <article data-tilt class="glass flex h-full flex-col overflow-hidden rounded-[28px]">
-          <div class="relative grid h-[320px] place-items-center bg-plum text-lg font-extrabold uppercase tracking-[0.18em] text-mist" aria-hidden="true"><span>Coming soon</span><span class="absolute right-3 top-3 rounded-full bg-night/70 px-3 py-1 text-xs tracking-[0.14em] text-mist">To be announced</span></div>
+          <div class="relative h-[320px] bg-plum">
+            <img src="assets/Abigail.jpg" alt="Akenawe Abigail" class="h-full w-full object-cover object-top" loading="lazy" onerror="this.style.display='none'">
+            <span class="absolute right-3 top-3 rounded-full bg-night/70 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-mint">Speaker</span>
+          </div>
           <div class="flex flex-1 flex-col gap-1 p-6">
-            <h3 class="text-2xl font-extrabold tracking-tight text-white">Speaker name coming soon</h3>
-            <p class="text-base font-semibold text-mist">Early stage investor</p>
-            <p class="mt-auto pt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-mint">Sessions 3 and 4 · The Money and Pitch Pit</p>
+            <h3 class="text-2xl font-extrabold tracking-tight text-white">Akenawe Abigail</h3>
+            <p class="text-base font-semibold text-mist">Founder, Nexspire Solutions</p>
+            <p class="mt-auto pt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-mint">Guest Speaker</p>
           </div>
         </article>
       </div>
-    </div>
+     
 
-    <div class="carousel-ui mt-6 flex items-center justify-between gap-3">
-      <div class="flex items-center gap-2">
-        <button type="button" data-prev aria-label="Previous speaker" class="grid h-11 w-11 place-items-center rounded-full border border-grape text-mist"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
-        <button type="button" data-next aria-label="Next speaker" class="grid h-11 w-11 place-items-center rounded-full border border-grape text-mist"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="slide" role="group" aria-label="Speaker 4">
+        <article data-tilt class="glass flex h-full flex-col overflow-hidden rounded-[28px]">
+          <div class="relative grid h-[320px] place-items-center bg-plum">
+            <span class="text-6xl font-extrabold text-lilac">04</span>
+            <span class="absolute right-3 top-3 rounded-full bg-night/70 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-mint">Speaker</span>
+          </div>
+          <div class="flex flex-1 flex-col gap-1 p-6">
+            <h3 class="text-2xl font-extrabold tracking-tight text-white">Speaker announcement coming soon</h3>
+            <p class="text-base font-semibold text-mist">Name and title to be announced</p>
+            <p class="mt-auto pt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-mint">Guest Speaker</p>
+          </div>
+        </article>
       </div>
-      <div class="flex items-center">
-        <button type="button" data-dot aria-label="Show speaker 1" class="grid h-11 place-items-center px-1"><span class="carousel-dot block"></span></button>
-        <button type="button" data-dot aria-label="Show speaker 2" class="grid h-11 place-items-center px-1"><span class="carousel-dot block"></span></button>
-        <button type="button" data-dot aria-label="Show speaker 3" class="grid h-11 place-items-center px-1"><span class="carousel-dot block"></span></button>
+      <div class="slide" role="group" aria-label="Speaker 5">
+        <article data-tilt class="glass flex h-full flex-col overflow-hidden rounded-[28px]">
+          <div class="relative grid h-[320px] place-items-center bg-plum">
+            <span class="text-6xl font-extrabold text-lilac">05</span>
+            <span class="absolute right-3 top-3 rounded-full bg-night/70 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-mint">Speaker</span>
+          </div>
+          <div class="flex flex-1 flex-col gap-1 p-6">
+            <h3 class="text-2xl font-extrabold tracking-tight text-white">Speaker announcement coming soon</h3>
+            <p class="text-base font-semibold text-mist">Name and title to be announced</p>
+            <p class="mt-auto pt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-mint">Guest Speaker</p>
+          </div>
+        </article>
       </div>
-      <button type="button" data-toggle aria-pressed="false" class="inline-flex min-h-[44px] items-center rounded-full border border-grape px-4 text-sm font-extrabold text-mist"><span data-label>Pause</span></button>
-    </div>
+
+
   </div>
 </section>
 
@@ -309,6 +330,7 @@
   </div>
 </section>
 
+<!--
 <!-- LAPTOP RAFFLE -->
 <section id="raffle" class="raffle-section mx-auto max-w-6xl scroll-mt-28 px-5 py-10 sm:px-8">
   <div data-reveal class="raffle-card relative grid overflow-hidden rounded-[34px] border border-white/15 lg:grid-cols-[.88fr_1.12fr]">
@@ -325,6 +347,9 @@
     </div>
   </div>
 </section>
+
+
+-->
 
 <!-- SPONSORS -->
 <section id="sponsors" class="band border-y border-grape/50">
