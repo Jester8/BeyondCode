@@ -49,12 +49,20 @@ export function MagneticLink({
         href={href}
         className={
           secondary
-            ? `inline-flex min-h-12 items-center justify-center rounded-full border-2 px-6 text-sm font-extrabold uppercase tracking-wide transition duration-300 ${
+            ? `inline-flex min-h-12 items-center justify-center rounded-full border-2 font-extrabold uppercase transition duration-300 ${
                 onDark
                   ? 'border-white text-white hover:bg-white hover:text-ink'
                   : 'border-current text-ink hover:bg-ink hover:text-white'
-              } ${fullWidth ? 'w-full px-2 text-[10px] sm:px-6 sm:text-sm' : ''}`
-            : `inline-flex min-h-12 items-center justify-center rounded-full bg-lime px-6 text-sm font-extrabold uppercase tracking-wide text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-[#a8dc24] hover:shadow-lg hover:shadow-black/10 ${fullWidth ? 'w-full px-2 text-[10px] sm:px-6 sm:text-sm' : ''}`
+              } ${
+                fullWidth
+                  ? 'w-full px-2 text-[10px] tracking-normal sm:px-6 sm:text-sm sm:tracking-wide'
+                  : 'px-6 text-sm tracking-wide'
+              }`
+            : `inline-flex min-h-12 items-center justify-center rounded-full bg-lime font-extrabold uppercase text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-[#a8dc24] hover:shadow-lg hover:shadow-black/10 ${
+                fullWidth
+                  ? 'w-full px-2 text-[10px] tracking-normal sm:px-6 sm:text-sm sm:tracking-wide'
+                  : 'px-6 text-sm tracking-wide'
+              }`
         }
       >
         {children}
