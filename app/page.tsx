@@ -59,7 +59,7 @@ const reasons = [
 export default function HomePage() {
   return (
     <main id="main-content">
-      <section className="home-hero relative flex min-h-[680px] items-center justify-center overflow-hidden bg-ink px-5 pb-16 pt-[118px] text-center text-white sm:px-8 sm:pt-[205px]">
+      <section       className="home-hero relative flex min-h-[680px] items-center justify-center overflow-hidden bg-ink px-0 pb-16 pt-[118px] text-center text-white sm:px-8 sm:pt-[205px]">
         <div aria-hidden="true" className="absolute inset-0">
           <Image
             src="/assets/business-of-tech-event.png"
