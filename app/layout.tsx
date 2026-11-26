@@ -4,6 +4,7 @@ import '@fontsource-variable/space-grotesk';
 import './globals.css';
 import { SiteFooter } from '@/components/site';
 import { SiteHeader } from '@/components/site-header';
+import { BackToTop } from '@/components/back-to-top';
 
 export const metadata: Metadata = {
   title: {
@@ -35,6 +36,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
+        <BackToTop />
       </body>
     </html>
   );

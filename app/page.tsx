@@ -6,6 +6,7 @@ import { ArrowUpRightIcon } from '@/components/icons';
 import { MerchBundleFeature } from '@/components/merch-bundle-feature';
 import { merchProducts } from '@/components/merch-products';
 import { partnerOpportunities } from '@/components/partner-opportunities';
+import { SessionFlipCard } from '@/components/session-flip-card';
 import { SpeakerRoster } from '@/components/speaker-roster';
 import {
   ButtonLink,
@@ -54,13 +55,10 @@ const reasons = [
 export default function HomePage() {
   return (
     <main id="main-content">
-      <section className="stage-panel relative flex min-h-[680px] items-center justify-center overflow-hidden px-5 pb-16 pt-[190px] text-center text-white sm:px-8 sm:pt-[205px]">
+      <section className="stage-panel relative flex min-h-[680px] items-center justify-center overflow-hidden px-5 pb-16 pt-[118px] text-center text-white sm:px-8 sm:pt-[205px]">
         <Container className="relative z-10 flex flex-col items-center">
           <KineticTitle />
-          <p className="hero-entrance-delayed mt-5 text-2xl font-extrabold tracking-tight text-white sm:text-4xl">
-            The Business of Tech
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
+          <div className="mt-6 hidden flex-wrap justify-center gap-2 sm:flex">
             {['Saturday 3 April 2027', '11:00am – 3:00pm', 'Ibadan, Oyo State'].map(
               (detail, index) => (
                 <span
@@ -83,9 +81,11 @@ export default function HomePage() {
             professionals to trade real numbers, honest feedback and useful
             introductions.
           </p>
-          <div className="hero-entrance-delayed mt-8 flex flex-wrap justify-center gap-3">
-            <ButtonLink href="/register">Reserve your seat</ButtonLink>
-            <ButtonLink href="/programme" secondary>
+          <div className="hero-entrance-delayed mt-8 grid w-full max-w-[360px] grid-cols-2 gap-2 sm:flex sm:w-auto sm:max-w-none sm:gap-3">
+            <ButtonLink href="/register" fullWidth>
+              Reserve your seat
+            </ButtonLink>
+            <ButtonLink href="/programme" secondary fullWidth>
               Explore the programme
             </ButtonLink>
           </div>
@@ -209,13 +209,12 @@ export default function HomePage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {sessions.map((session, index) => (
               <Reveal key={session.title} delay={index * 70}>
-                <FeatureCard
+                <SessionFlipCard
                   number={`0${index + 1} / ${session.label}`}
                   title={session.title}
+                  description={session.description}
                   tone={sessionTones[index]}
-                >
-                  {session.description}
-                </FeatureCard>
+                />
               </Reveal>
             ))}
           </div>

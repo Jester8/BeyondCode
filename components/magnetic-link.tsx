@@ -8,12 +8,14 @@ type MagneticLinkProps = {
   href: string;
   children: ReactNode;
   secondary?: boolean;
+  fullWidth?: boolean;
 };
 
 export function MagneticLink({
   href,
   children,
   secondary = false,
+  fullWidth = false,
 }: MagneticLinkProps) {
   const reduceMotion = useReducedMotion();
   const x = useSpring(useMotionValue(0), { stiffness: 260, damping: 18 });
@@ -36,7 +38,7 @@ export function MagneticLink({
 
   return (
     <motion.div
-      className="inline-flex"
+      className={`inline-flex ${fullWidth ? 'w-full' : ''}`}
       style={reduceMotion ? undefined : { x, y }}
       onPointerMove={moveWithPointer}
       onPointerLeave={resetPosition}
@@ -45,8 +47,8 @@ export function MagneticLink({
         href={href}
         className={
           secondary
-            ? 'inline-flex min-h-12 items-center justify-center rounded-full border-2 border-current px-6 text-sm font-extrabold uppercase tracking-wide text-ink transition duration-300 hover:bg-ink hover:text-white'
-            : 'inline-flex min-h-12 items-center justify-center rounded-full bg-lime px-6 text-sm font-extrabold uppercase tracking-wide text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-[#a8dc24] hover:shadow-lg hover:shadow-black/10'
+            ? `inline-flex min-h-12 items-center justify-center rounded-full border-2 border-current px-6 text-sm font-extrabold uppercase tracking-wide text-ink transition duration-300 hover:bg-ink hover:text-white ${fullWidth ? 'w-full px-2 text-[10px] sm:px-6 sm:text-sm' : ''}`
+            : `inline-flex min-h-12 items-center justify-center rounded-full bg-lime px-6 text-sm font-extrabold uppercase tracking-wide text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-[#a8dc24] hover:shadow-lg hover:shadow-black/10 ${fullWidth ? 'w-full px-2 text-[10px] sm:px-6 sm:text-sm' : ''}`
         }
       >
         {children}

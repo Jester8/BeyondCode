@@ -43,3 +43,26 @@ export function ArrowLeftIcon({
     </svg>
   );
 }
+
+export function ArrowUpIcon({
+  className = 'h-5 w-5',
+}: {
+  className?: string;
+}) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="M10 15V5m0 0L5.5 9.5M10 5l4.5 4.5"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+      />
+    </svg>
+  );
+}

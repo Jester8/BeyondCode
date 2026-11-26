@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Reveal } from '@/components/reveal';
+import { SessionFlipCard } from '@/components/session-flip-card';
 import {
   Container,
   EventCta,
@@ -104,13 +105,12 @@ export default function ProgrammePage() {
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {sessions.map((session, index) => (
               <Reveal key={session.title} delay={index * 90}>
-                <FeatureCard
+                <SessionFlipCard
                   number={`0${index + 1} / ${session.label}`}
                   title={session.title}
+                  description={session.description}
                   tone={sessionTones[index]}
-                >
-                  {session.description}
-                </FeatureCard>
+                />
               </Reveal>
             ))}
           </div>

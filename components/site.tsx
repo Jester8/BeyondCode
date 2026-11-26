@@ -82,15 +82,18 @@ export function ButtonLink({
   href,
   children,
   secondary = false,
+  fullWidth = false,
 }: {
   href: string;
   children: React.ReactNode;
   secondary?: boolean;
+  fullWidth?: boolean;
 }) {
   return (
     <MagneticLink
       href={href}
       secondary={secondary}
+      fullWidth={fullWidth}
     >
       {children}
     </MagneticLink>
@@ -132,6 +135,7 @@ const footerLinks = [
   { href: '/about', label: 'About' },
   { href: '/programme', label: 'Programme' },
   { href: '/speakers', label: 'Speakers' },
+  { href: '/team', label: 'Team' },
   { href: '/merch', label: 'Merch' },
   { href: '/partners', label: 'Partners' },
   { href: '/#sponsors', label: 'Sponsors' },

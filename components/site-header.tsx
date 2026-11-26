@@ -11,6 +11,7 @@ const links = [
   { href: '/about', label: 'About' },
   { href: '/programme', label: 'Programme' },
   { href: '/speakers', label: 'Speakers' },
+  { href: '/team', label: 'Team' },
   { href: '/merch', label: 'Merch' },
   { href: '/partners', label: 'Partners' },
 ];
@@ -36,7 +37,7 @@ export function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white">
       <section
         aria-label="Event information"
-        className="overflow-hidden bg-ink py-2 text-white"
+        className="hidden overflow-hidden bg-ink py-2 text-white sm:block"
       >
         <p className="sr-only">
           Saturday 3 April 2027, Ibadan, Oyo State, 11:00am to 3:00pm, 200
@@ -126,8 +127,8 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className="border-b border-black/10 bg-white">
-        <div className="mx-auto grid min-h-11 max-w-6xl grid-cols-3 items-center gap-2 px-5 text-[10px] sm:px-8 sm:text-sm">
+      <div className="hidden border-b border-black/10 bg-white sm:block">
+        <div className="mx-auto hidden min-h-11 max-w-6xl grid-cols-3 items-center gap-2 px-5 text-[10px] sm:grid sm:px-8 sm:text-sm">
           <p className="whitespace-nowrap font-bold text-ink">
             Saturday 3 April 2027
           </p>

@@ -136,6 +136,45 @@ h6 {
   animation-play-state: paused;
 }
 
+.session-flip-card {
+  perspective: 1200px;
+}
+
+.session-flip-inner {
+  position: relative;
+  display: block;
+  min-height: 340px;
+  transform-style: preserve-3d;
+}
+
+.session-flip-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-width: 1px;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.session-flip-back {
+  transform: rotateY(180deg);
+}
+
+@media (min-width: 640px) {
+  .session-flip-inner {
+    min-height: 300px;
+  }
+
+  .session-flip-face {
+    padding: 1.75rem;
+  }
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;

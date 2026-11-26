@@ -7,7 +7,8 @@ import {
   motion,
   useReducedMotion,
 } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import type { PointerEvent } from 'react';
 
 type Speaker = {
   name: string;
@@ -125,6 +126,30 @@ export function SpeakerRoster() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const reduceMotion = useReducedMotion();
+  const swipeStart = useRef<{ x: number; y: number } | null>(null);
+
+  function handleSwipeStart(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+    swipeStart.current = { x: event.clientX, y: event.clientY };
+  }
+
+  function handleSwipeEnd(event: PointerEvent<HTMLDivElement>) {
+    const start = swipeStart.current;
+    swipeStart.current = null;
+    if (!start) return;
+
+    const horizontal = event.clientX - start.x;
+    const vertical = event.clientY - start.y;
+    if (Math.abs(horizontal) < 48 || Math.abs(horizontal) < Math.abs(vertical)) {
+      return;
+    }
+
+    setActiveIndex((index) =>
+      horizontal < 0
+        ? (index + 1) % speakers.length
+        : (index - 1 + speakers.length) % speakers.length,
+    );
+  }
 
   useEffect(() => {
     const breakpoint = window.matchMedia('(max-width: 767px)');
@@ -159,7 +184,14 @@ export function SpeakerRoster() {
         role="region"
         className="md:hidden"
       >
-        <div className="overflow-hidden">
+        <div
+          className="overflow-hidden touch-pan-y"
+          onPointerDown={handleSwipeStart}
+          onPointerUp={handleSwipeEnd}
+          onPointerCancel={() => {
+            swipeStart.current = null;
+          }}
+        >
           <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={speakers[activeIndex].name}
