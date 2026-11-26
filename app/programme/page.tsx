@@ -13,24 +13,28 @@ const sessions = [
   {
     label: 'Opening talk and live audit',
     title: 'Perception Marketing: How Nigerians Decide to Trust and Buy',
+    summary: 'Explore how positioning, naira pricing and social proof shape trust.',
     description:
       'Positioning, pricing in naira, brand signals and social proof, followed by a live audit of three attendee products.',
   },
   {
     label: 'Live build for engineers',
     title: 'The Build: Shipping Faster with AI',
+    summary: 'Build a working feature live and see where AI helps.',
     description:
       'A working feature built live with AI tools. Where AI saves hours, where it gets things wrong, and how to build for local conditions.',
   },
   {
     label: 'Practical clinic',
     title: 'Communication and Ethics: Doing Business People Trust',
+    summary: 'Practice clearer proposals and thoughtful decisions about data and money.',
     description:
       'Proposals and messages that get replies, honest expectations on price and timelines, and the hard calls on customer data and money.',
   },
   {
     label: 'Closing panel',
     title: 'The Honest Panel: Building, Selling and Surviving in Nigerian Tech',
+    summary: 'Hear practitioners share the realities of building and selling in tech.',
     description:
       'Four practitioners from different corners of tech talk openly about what really happens beyond the code, with questions from the room.',
   },
@@ -108,6 +112,7 @@ export default function ProgrammePage() {
                 <SessionFlipCard
                   number={`0${index + 1} / ${session.label}`}
                   title={session.title}
+                  summary={session.summary}
                   description={session.description}
                   tone={sessionTones[index]}
                 />

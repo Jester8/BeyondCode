@@ -31,11 +31,13 @@ const toneStyles: Record<SessionTone, { front: string; text: string; detail: str
 export function SessionFlipCard({
   number,
   title,
+  summary,
   description,
   tone,
 }: {
   number: string;
   title: string;
+  summary: string;
   description: string;
   tone: SessionTone;
 }) {
@@ -71,9 +73,12 @@ export function SessionFlipCard({
             <span className={`mt-8 block text-xl font-extrabold leading-tight tracking-tight sm:text-2xl ${colors.text}`}>
               {title}
             </span>
+            <span className={`mt-3 block text-sm leading-relaxed ${colors.detail}`}>
+              {summary}
+            </span>
           </span>
           <span className={`mt-8 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.14em] ${colors.detail}`}>
-            Tap to flip
+            Tap to view full details
           </span>
         </span>
         <span
