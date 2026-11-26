@@ -35,6 +35,19 @@ h6 {
   background: #7f3aed;
 }
 
+.home-hero {
+  isolation: isolate;
+}
+
+.site-loader-grid {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, #000 8%, transparent 78%);
+  pointer-events: none;
+}
+
 .stage-panel::after {
   position: absolute;
   inset: 0;

@@ -6,6 +6,7 @@ import { SiteFooter } from '@/components/site';
 import { SiteHeader } from '@/components/site-header';
 import { BackToTop } from '@/components/back-to-top';
 import { CommunityInviteModal } from '@/components/community-invite-modal';
+import { SiteLoader } from '@/components/site-loader';
 
 export const metadata: Metadata = {
   title: {
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-paper font-sans antialiased">
+        <SiteLoader />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-3 focus:font-bold focus:shadow-card"

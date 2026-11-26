@@ -59,7 +59,18 @@ const reasons = [
 export default function HomePage() {
   return (
     <main id="main-content">
-      <section className="stage-panel relative flex min-h-[680px] items-center justify-center overflow-hidden px-5 pb-16 pt-[118px] text-center text-white sm:px-8 sm:pt-[205px]">
+      <section className="home-hero relative flex min-h-[680px] items-center justify-center overflow-hidden bg-ink px-5 pb-16 pt-[118px] text-center text-white sm:px-8 sm:pt-[205px]">
+        <div aria-hidden="true" className="absolute inset-0">
+          <Image
+            src="/assets/business-of-tech-event.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-contain object-center opacity-65 sm:object-right"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/55 to-ink/90" />
+        </div>
         <Container className="relative z-10 flex flex-col items-center">
           <KineticTitle />
           <div className="mt-6 hidden flex-wrap justify-center gap-2 sm:flex">
