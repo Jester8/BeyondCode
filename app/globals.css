@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #171717;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk Variable', sans-serif;
+}
+
+::selection {
+  background: #ff4733;
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid #7f3aed;
+  outline-offset: 4px;
+}
+
+.hero-entrance {
+  animation: rise-in 800ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-entrance-delayed {
+  animation: rise-in 800ms 120ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.float-gently {
+  animation: float-gently 7s ease-in-out infinite;
+}
+
+.topic-marquee {
+  overflow: hidden;
+}
+
+.event-ticker {
+  overflow: hidden;
+}
+
+.event-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: topic-scroll 42s linear infinite;
+}
+
+.event-ticker:hover .event-ticker-track {
+  animation-play-state: paused;
+}
+
+.topic-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: topic-scroll 36s linear infinite;
+}
+
+.topic-marquee:hover .topic-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-gently {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes topic-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .topic-marquee-track {
+    width: 100%;
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .event-ticker-track {
+    animation: none;
+  }
+}
