@@ -5,7 +5,6 @@ import { KineticTitle } from '@/components/kinetic-title';
 import { ArrowUpRightIcon } from '@/components/icons';
 import { MerchBundleFeature } from '@/components/merch-bundle-feature';
 import { merchProducts } from '@/components/merch-products';
-import { PartnerOpportunityCards } from '@/components/partner-opportunity-cards';
 import { partnerOpportunities } from '@/components/partner-opportunities';
 import { SpeakerRoster } from '@/components/speaker-roster';
 import {
@@ -352,26 +351,76 @@ export default function HomePage() {
                 Sponsors & partners
               </p>
               <h2 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.02] tracking-[-0.045em] text-white sm:text-5xl">
-                Bring something meaningful to the room.
+                Open ways to be part of the room.
               </h2>
               <p className="mt-4 max-w-2xl leading-relaxed text-white/60">
-                These open opportunities show how partners could support the
-                day. No sponsors have been announced yet.
+                No sponsors have been announced yet. Explore the roles available
+                to organizations who want to support Beyond Code.
               </p>
             </Reveal>
-            <Link
-              href="/partners"
-              className="group inline-flex min-h-11 items-center gap-2 text-sm font-extrabold text-white transition hover:text-lime"
-            >
-              Explore every opportunity
-              <ArrowUpRightIcon className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
           </div>
-          <div className="mt-10">
-            <PartnerOpportunityCards
-              opportunities={partnerOpportunities.slice(0, 3)}
-              compact
-            />
+          <div className="partner-marquee mt-10 py-2">
+            <p className="sr-only">
+              Open opportunities:{' '}
+              {partnerOpportunities.map((item) => item.title).join(', ')}.
+            </p>
+            <div className="partner-marquee-track" aria-hidden="true">
+              {[0, 1].map((copy) => (
+                <div
+                  key={copy}
+                  className="flex shrink-0 items-center gap-3 px-2 sm:gap-4"
+                >
+                  {partnerOpportunities.map((opportunity) => (
+                    <div
+                      key={`${copy}-${opportunity.slug}`}
+                      className="inline-flex h-24 min-w-[240px] items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] px-4 sm:min-w-[280px] sm:px-5"
+                    >
+                      <span className="grid h-14 w-14 shrink-0 place-items-center rounded-xl border border-white/15 bg-white/[0.04] text-center text-[9px] font-extrabold uppercase leading-tight tracking-[0.1em] text-lime">
+                        Your
+                        <br />
+                        logo
+                      </span>
+                      <span>
+                        <span className="block text-[9px] font-extrabold uppercase tracking-[0.16em] text-lime">
+                          {opportunity.category}
+                        </span>
+                        <span className="mt-1 block text-sm font-extrabold text-white sm:text-base">
+                          {opportunity.title}
+                        </span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container className="stage-panel relative overflow-hidden rounded-[2rem] px-7 py-12 text-white sm:px-14 sm:py-16">
+          <div className="relative z-10 grid items-end gap-8 md:grid-cols-[1fr_auto]">
+            <div className="max-w-2xl">
+              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-lime">
+                Get involved
+              </p>
+              <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-[-0.04em] sm:text-5xl">
+                Sponsor. Partner. Be a part.
+              </h2>
+              <p className="mt-4 text-white/75">
+                Help shape a focused day for the people building Nigeria’s
+                technology community.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <ButtonLink href="/partners">Explore opportunities</ButtonLink>
+              <a
+                href="mailto:samuelolu407@gmail.com?subject=Beyond%20Code%20partnership"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/35 px-6 text-sm font-bold text-white transition hover:bg-white/10"
+              >
+                Talk to the team
+              </a>
+            </div>
           </div>
         </Container>
       </section>

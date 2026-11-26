@@ -32,10 +32,7 @@ h6 {
 }
 
 .stage-panel {
-  background:
-    radial-gradient(ellipse at 12% 18%, rgb(148 205 1 / 16%), transparent 30%),
-    radial-gradient(ellipse at 88% 82%, rgb(255 71 51 / 30%), transparent 40%),
-    linear-gradient(125deg, #321a52 0%, #7f3aed 46%, #5424ca 72%, #291a3a 100%);
+  background: #7f3aed;
 }
 
 .stage-panel::after {
@@ -124,6 +121,21 @@ h6 {
   animation-play-state: paused;
 }
 
+.partner-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.partner-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: topic-scroll 48s linear infinite;
+}
+
+.partner-marquee:hover .partner-marquee-track {
+  animation-play-state: paused;
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -168,8 +180,24 @@ h6 {
     justify-content: center;
   }
 
+  .partner-marquee-track {
+    width: 100%;
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .partner-marquee-track > div {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .partner-marquee-track > div:nth-child(2) {
+    display: none;
+  }
+
   .event-ticker-track {
     animation: none;
   }
-
 }

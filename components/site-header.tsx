@@ -111,7 +111,7 @@ export function SiteHeader() {
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen((open) => !open)}
-              className="grid h-11 w-11 place-items-center rounded-full border border-black/30 text-ink transition hover:bg-paper lg:hidden"
+              className="grid h-11 w-11 place-items-center text-violet transition hover:text-ink lg:hidden"
             >
               <span className="sr-only">
                 {menuOpen ? 'Close menu' : 'Open menu'}
