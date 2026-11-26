@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Reveal } from '@/components/reveal';
+import { ArrowUpRightIcon } from '@/components/icons';
 import {
   ButtonLink,
   Container,
@@ -17,7 +18,7 @@ export const metadata = {
 };
 
 const eventDetails = [
-  ['Date', 'Saturday 27 March 2027'],
+  ['Date', 'Saturday 3 April 2027'],
   ['Time', '11:00am – 3:00pm'],
   ['Location', 'Ibadan, Oyo State'],
   ['Capacity', '200 people'],
@@ -42,14 +43,14 @@ export default function EventsPage() {
               </p>
             </div>
             <article className="grid overflow-hidden rounded-[2rem] border border-black/[0.07] bg-white shadow-card lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="relative min-h-[300px] bg-paper sm:min-h-[440px]">
+              <div className="relative min-h-[300px] bg-ink sm:min-h-[440px] lg:min-h-[560px]">
                 <Image
-                  src="/assets/workshop-collaboration.jpg"
-                  alt="A small group of technology professionals sharing ideas around a laptop"
+                  src="/assets/business-of-tech-event.png"
+                  alt="Beyond Code: The Business of Tech neon conference poster with an auditorium audience"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
@@ -129,7 +130,7 @@ export default function EventsPage() {
               href="/speakers"
               className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-extrabold text-violet transition hover:gap-3"
             >
-              Meet the speakers <span aria-hidden="true">→</span>
+              Meet the speakers <ArrowUpRightIcon />
             </Link>
           </Reveal>
           <Reveal>

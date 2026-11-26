@@ -8,15 +8,15 @@ const config: Config = {
         tangerine: '#FF4733',
         violet: '#7F3AED',
         lime: '#94CD01',
-        ink: '#171717',
-        paper: '#F8F8F6',
+        ink: '#090909',
+        paper: '#F3F2ED',
       },
       fontFamily: {
         sans: ['Manrope Variable', 'sans-serif'],
         display: ['Space Grotesk Variable', 'sans-serif'],
       },
       boxShadow: {
-        card: '0 18px 55px rgba(23, 23, 23, 0.08)',
+        card: '0 18px 55px rgba(9, 9, 9, 0.1)',
       },
     },
   },

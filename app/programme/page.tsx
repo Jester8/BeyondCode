@@ -35,6 +35,8 @@ const sessions = [
   },
 ];
 
+const sessionTones = ['tangerine', 'violet', 'lime', 'ink'] as const;
+
 export const metadata = {
   title: 'Programme',
   description: 'Explore the four practical sessions at Beyond Code 2027.',
@@ -52,7 +54,7 @@ export default function ProgrammePage() {
       <section className="py-10 sm:py-14">
         <Container className="grid gap-4 sm:grid-cols-3">
           {[
-            ['Date', 'Saturday 27 March 2027'],
+            ['Date', 'Saturday 3 April 2027'],
             ['Time', '11:00am to 3:00pm'],
             ['Venue', 'Ibadan, Oyo State · to be confirmed'],
           ].map(([label, value], index) => (
@@ -101,11 +103,11 @@ export default function ProgrammePage() {
           </Reveal>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {sessions.map((session, index) => (
-              <Reveal key={session.title} delay={(index % 2) * 90}>
+              <Reveal key={session.title} delay={index * 90}>
                 <FeatureCard
                   number={`0${index + 1} / ${session.label}`}
                   title={session.title}
-                  accent={index % 2 === 0 ? 'tangerine' : 'violet'}
+                  tone={sessionTones[index]}
                 >
                   {session.description}
                 </FeatureCard>

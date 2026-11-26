@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Reveal } from '@/components/reveal';
+import { ArrowUpRightIcon } from '@/components/icons';
 import {
   Container,
   Eyebrow,
@@ -17,7 +18,7 @@ const steps = [
 const questions = [
   ['Who can attend?', 'Anyone who works in or near tech: founders, engineers, product people, sales and marketing, students and investors.'],
   ['How many seats are there?', '200. When they are gone, they are gone.'],
-  ['What time does it start and end?', 'Doors open for an 11:00am start and the day closes at 3:00pm on Saturday 27 March 2027.'],
+  ['What time does it start and end?', 'Doors open for an 11:00am start and the day closes at 3:00pm on Saturday 3 April 2027.'],
   ['Where is it?', 'The venue is still to be confirmed. Everyone who registers hears first.'],
   ['What is the Ask Board?', 'A board where you post one ask and one offer. You will meet people who can help with yours and need yours.'],
   ['What are the role-coloured badges?', 'Your badge colour shows your role, so you can find the right person in seconds.'],
@@ -114,9 +115,9 @@ export default function RegisterPage() {
           </div>
           <Link
             href="/about"
-            className="mt-8 inline-flex text-sm font-bold text-violet hover:text-tangerine"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-violet hover:text-tangerine"
           >
-            Learn more about the event →
+            Learn more about the event <ArrowUpRightIcon />
           </Link>
         </Container>
       </section>

@@ -1,12 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Reveal } from '@/components/reveal';
-import { InteractiveCard } from '@/components/interactive-card';
 import { KineticTitle } from '@/components/kinetic-title';
+import { ArrowUpRightIcon } from '@/components/icons';
+import { MerchBundleFeature } from '@/components/merch-bundle-feature';
+import { merchProducts } from '@/components/merch-products';
+import { PartnerOpportunityCards } from '@/components/partner-opportunity-cards';
+import { partnerOpportunities } from '@/components/partner-opportunities';
+import { SpeakerRoster } from '@/components/speaker-roster';
 import {
   ButtonLink,
   Container,
-  Eyebrow,
   EventCta,
   FeatureCard,
   SectionHeading,
@@ -39,6 +43,8 @@ const sessions = [
   },
 ];
 
+const sessionTones = ['tangerine', 'violet', 'lime', 'ink'] as const;
+
 const reasons = [
   ['01', 'Real numbers', 'Users, naira, weeks and mistakes. Specifics are what you take home.'],
   ['02', 'Honest feedback', 'Live audits, a live build and a panel show what works while you watch.'],
@@ -49,79 +55,47 @@ const reasons = [
 export default function HomePage() {
   return (
     <main id="main-content">
-      <section className="relative overflow-hidden pb-16 pt-32 sm:pb-24 sm:pt-40">
-        <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="relative z-10">
-            <div className="hero-entrance inline-flex items-center gap-2 rounded-full border border-tangerine/20 bg-tangerine/[0.06] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.13em] text-tangerine">
-              <span className="h-2 w-2 rounded-full bg-tangerine" />
-              Ibadan · 27 March 2027
-            </div>
-            <KineticTitle />
-            <p className="hero-entrance-delayed mt-6 text-xl font-bold tracking-tight text-ink sm:text-2xl">
-              The Business of Tech
-            </p>
-            <p className="hero-entrance-delayed mt-4 max-w-xl text-base leading-relaxed text-black/60 sm:text-lg">
-              Everything that happens after the code. A focused day for 200
-              tech professionals to trade real numbers, honest feedback and
-              useful introductions.
-            </p>
-            <div className="hero-entrance-delayed mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="/register">Reserve your seat</ButtonLink>
-              <ButtonLink href="/programme" secondary>
-                Explore the programme
-              </ButtonLink>
-            </div>
-            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 border-t border-black/10 pt-6 text-sm">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-black/40">
-                  When
-                </p>
-                <p className="mt-1 font-bold">11:00am – 3:00pm</p>
-              </div>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-black/40">
-                  Where
-                </p>
-                <p className="mt-1 font-bold">Ibadan, Oyo State</p>
-              </div>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-black/40">
-                  Seats
-                </p>
-                <p className="mt-1 font-bold">200, limited</p>
-              </div>
-            </div>
+      <section className="stage-panel relative flex min-h-[680px] items-center justify-center overflow-hidden px-5 pb-16 pt-[190px] text-center text-white sm:px-8 sm:pt-[205px]">
+        <Container className="relative z-10 flex flex-col items-center">
+          <KineticTitle />
+          <p className="hero-entrance-delayed mt-5 text-2xl font-extrabold tracking-tight text-white sm:text-4xl">
+            The Business of Tech
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            {['Saturday 3 April 2027', '11:00am – 3:00pm', 'Ibadan, Oyo State'].map(
+              (detail, index) => (
+                <span
+                  key={detail}
+                  className={`rounded-md px-4 py-2 text-[11px] font-extrabold uppercase tracking-wide text-ink sm:text-sm ${
+                    index === 0
+                      ? 'bg-lime'
+                      : index === 1
+                        ? 'bg-tangerine text-white'
+                        : 'bg-white'
+                  }`}
+                >
+                  {detail}
+                </span>
+              ),
+            )}
           </div>
-
-          <div className="relative mx-auto w-full max-w-xl lg:ml-auto">
-            <div className="absolute -left-7 top-10 h-24 w-24 rounded-full bg-lime/25 blur-2xl sm:-left-10 sm:h-36 sm:w-36" />
-            <div className="absolute -right-6 bottom-7 h-32 w-32 rounded-full bg-violet/15 blur-3xl" />
-            <div className="relative aspect-[1.08] overflow-hidden rounded-[2rem] bg-paper">
-              <Image
-                src="/assets/workshop-collaboration.jpg"
-                alt="A small group of technology professionals working through an idea together"
-                fill
-                priority
-                sizes="(max-width: 1024px) 90vw, 42vw"
-                className="object-cover"
-              />
-              <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/35 bg-white/90 p-5 shadow-card backdrop-blur sm:bottom-7 sm:left-7 sm:right-7">
-                <Eyebrow>Real people. Real work.</Eyebrow>
-                <p className="mt-2 text-lg font-extrabold tracking-tight text-ink sm:text-xl">
-                  A room where your next conversation could change everything.
-                </p>
-              </div>
-              <span className="float-gently absolute right-4 top-4 rounded-full bg-lime px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-ink sm:right-6 sm:top-6">
-                The business of tech
-              </span>
-            </div>
+          <p className="hero-entrance-delayed mt-7 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg">
+            Everything that happens after the code. A focused day for 200 tech
+            professionals to trade real numbers, honest feedback and useful
+            introductions.
+          </p>
+          <div className="hero-entrance-delayed mt-8 flex flex-wrap justify-center gap-3">
+            <ButtonLink href="/register">Reserve your seat</ButtonLink>
+            <ButtonLink href="/programme" secondary>
+              Explore the programme
+            </ButtonLink>
           </div>
         </Container>
       </section>
 
       <section
         aria-label="Beyond Code topics"
-        className="border-y border-black/[0.06] bg-paper py-5"
+        className="border-y border-white/10 bg-ink py-5 text-white"
       >
         <p className="sr-only">
           Markets, product, trust, money, communication, technology and people.
@@ -131,13 +105,13 @@ export default function HomePage() {
             {[0, 1].map((copy) => (
               <div
                 key={copy}
-                className="flex shrink-0 items-center gap-6 px-6 text-sm font-extrabold uppercase tracking-[0.16em] text-ink sm:gap-9 sm:px-9 sm:text-base"
+                className="flex shrink-0 items-center gap-6 px-6 text-sm font-extrabold uppercase tracking-[0.16em] text-white sm:gap-9 sm:px-9 sm:text-base"
               >
                 {['Markets', 'Product', 'Trust', 'Money', 'Communication', 'People'].map(
                   (topic) => (
                     <span key={topic} className="flex items-center gap-6 sm:gap-9">
                       {topic}
-                      <span className="h-2 w-2 rounded-full bg-tangerine" />
+                    <span className="h-2 w-2 rounded-full bg-lime" />
                     </span>
                   ),
                 )}
@@ -147,7 +121,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section aria-label="The event in numbers" className="border-y border-black/[0.06] bg-paper">
+      <section aria-label="The event in numbers" className="border-y border-white/10 bg-ink text-white">
         <Container className="grid grid-cols-2 gap-6 py-8 sm:grid-cols-4 sm:py-10">
           {[
             ['200', 'People'],
@@ -156,10 +130,10 @@ export default function HomePage() {
             ['5', 'Guest speakers'],
           ].map(([number, label]) => (
             <Reveal key={label}>
-              <p className="text-4xl font-extrabold tracking-[-0.06em] text-ink sm:text-5xl">
+              <p className="text-4xl font-extrabold tracking-[-0.06em] text-white sm:text-5xl">
                 {number}
               </p>
-              <p className="mt-1 text-xs font-bold uppercase tracking-[0.15em] text-violet">
+              <p className="mt-1 text-xs font-bold uppercase tracking-[0.15em] text-lime">
                 {label}
               </p>
             </Reveal>
@@ -239,7 +213,7 @@ export default function HomePage() {
                 <FeatureCard
                   number={`0${index + 1} / ${session.label}`}
                   title={session.title}
-                  accent={index % 2 === 0 ? 'tangerine' : 'violet'}
+                  tone={sessionTones[index]}
                 >
                   {session.description}
                 </FeatureCard>
@@ -250,7 +224,7 @@ export default function HomePage() {
             href="/programme"
             className="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-extrabold text-violet transition hover:gap-3"
           >
-            See the full programme <span aria-hidden="true">→</span>
+            See the full programme <ArrowUpRightIcon />
           </Link>
         </Container>
       </section>
@@ -265,9 +239,9 @@ export default function HomePage() {
             </Reveal>
             <Link
               href="/about#why"
-              className="text-sm font-bold text-violet transition hover:text-tangerine"
+              className="inline-flex items-center gap-2 text-sm font-bold text-violet transition hover:text-tangerine"
             >
-              Why people come →
+              Why people come <ArrowUpRightIcon />
             </Link>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -286,73 +260,119 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-paper py-16 sm:py-24">
+      <section className="bg-ink py-16 text-white sm:py-24">
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-5">
             <Reveal>
-              <SectionHeading eyebrow="Guest speakers">
+              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-lime">
+                Guest speakers
+              </p>
+              <h2 className="mt-4 max-w-2xl text-3xl font-extrabold leading-[1.02] tracking-[-0.045em] text-white sm:text-5xl">
                 Meet the people behind the ideas.
-              </SectionHeading>
+              </h2>
             </Reveal>
             <Link
               href="/speakers"
-              className="text-sm font-bold text-violet transition hover:text-tangerine"
+              className="group inline-flex items-center gap-3 text-sm font-bold text-white transition hover:text-lime"
             >
-              View all speakers →
+              View all speakers
+              <span className="grid h-10 w-10 place-items-center rounded-full border border-white/30 transition group-hover:border-lime">
+                <ArrowUpRightIcon />
+              </span>
             </Link>
           </div>
-          <div className="mt-10 grid max-w-4xl gap-5 sm:grid-cols-2">
-            {[
-              {
-                name: 'Olusanya Samuel A.',
-                role: 'Convener, Beyond Code',
-                image: '/assets/sam-web.jpg',
-              },
-              {
-                name: 'Abigail Akenawe',
-                role: 'CEO, Nexspire Solutions',
-                image: '/assets/Abigail.jpg',
-              },
-            ].map((speaker, index) => (
-              <Reveal key={speaker.name} delay={index * 70}>
-                <InteractiveCard className="h-full">
-                  <Link
-                    href={index === 0 ? '/speakers/olusanya-samuel' : '/speakers'}
-                    className="group block h-full overflow-hidden rounded-3xl border border-black/[0.07] bg-white transition-shadow duration-300 hover:shadow-card"
-                  >
-                    <div className="relative aspect-[0.92] overflow-hidden bg-white">
-                      <Image
-                        src={speaker.image}
-                        alt={speaker.name}
-                        fill
-                        sizes="(max-width: 640px) 100vw, 50vw"
-                        className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
-                      />
-                    </div>
-                    <div className="p-5">
-                      <h3 className="font-extrabold text-ink">{speaker.name}</h3>
-                      <p className="mt-1 text-sm text-black/55">{speaker.role}</p>
-                    </div>
-                  </Link>
-                </InteractiveCard>
-              </Reveal>
-            ))}
+          <div className="mt-10">
+            <SpeakerRoster />
           </div>
         </Container>
       </section>
 
-      <section id="sponsors" className="border-y border-black/[0.06] bg-paper py-16 sm:py-20">
-        <Container className="grid gap-7 md:grid-cols-[1fr_auto] md:items-end">
-          <Reveal>
-            <SectionHeading eyebrow="Our partners">Meet our sponsors.</SectionHeading>
-            <p className="mt-4 max-w-2xl text-black/60">
-              Sponsor announcements are coming soon. Interested in supporting
-              Beyond Code? We would love to hear from you.
-            </p>
-          </Reveal>
-          <ButtonLink href="mailto:samuelolu407@gmail.com?subject=Beyond%20Code%202027%20sponsorship">
-            Talk about sponsorship
-          </ButtonLink>
+      <section className="bg-paper py-16 sm:py-24">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <Reveal>
+              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-ink">
+                Beyond Code merch
+              </p>
+              <h2 className="mt-4 max-w-2xl text-3xl font-extrabold leading-[1.02] tracking-[-0.045em] text-ink sm:text-5xl">
+                A little piece of the room.
+              </h2>
+              <p className="mt-4 max-w-xl leading-relaxed text-black/60">
+                Choose a color on any product page and order directly through
+                WhatsApp.
+              </p>
+            </Reveal>
+            <ButtonLink href="/merch">Explore the merch</ButtonLink>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+            {merchProducts.map((product) => (
+              <Link
+                key={product.name}
+                href={`/merch/${product.slug}`}
+                  aria-label={`Order Beyond Code ${product.name}; choose a color`}
+                className="group overflow-hidden rounded-2xl border border-black/[0.07] bg-white sm:rounded-3xl"
+              >
+                <div className="relative aspect-[1.2] overflow-hidden bg-paper sm:aspect-[1.47]">
+                  <Image
+                    src={product.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                    className={
+                      product.imageFit === 'contain'
+                        ? 'object-contain p-2 sm:p-3'
+                        : 'object-cover transition-transform duration-700 group-hover:scale-[1.04]'
+                    }
+                  />
+                </div>
+                <div className="p-3 sm:p-5">
+                  <h3 className="text-sm font-extrabold text-ink sm:text-lg">
+                    {product.name}
+                  </h3>
+                  <p className="mt-1 text-xs font-bold text-ink sm:text-sm">
+                    {product.price}
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1 whitespace-nowrap text-[10px] font-extrabold uppercase tracking-[0.12em] text-ink sm:text-xs">
+                    Order now
+                    <ArrowUpRightIcon className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <MerchBundleFeature className="mt-5" />
+        </Container>
+      </section>
+
+      <section id="sponsors" className="bg-ink py-16 text-white sm:py-24">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <Reveal>
+              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-lime">
+                Sponsors & partners
+              </p>
+              <h2 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.02] tracking-[-0.045em] text-white sm:text-5xl">
+                Bring something meaningful to the room.
+              </h2>
+              <p className="mt-4 max-w-2xl leading-relaxed text-white/60">
+                These open opportunities show how partners could support the
+                day. No sponsors have been announced yet.
+              </p>
+            </Reveal>
+            <Link
+              href="/partners"
+              className="group inline-flex min-h-11 items-center gap-2 text-sm font-extrabold text-white transition hover:text-lime"
+            >
+              Explore every opportunity
+              <ArrowUpRightIcon className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+          <div className="mt-10">
+            <PartnerOpportunityCards
+              opportunities={partnerOpportunities.slice(0, 3)}
+              compact
+            />
+          </div>
         </Container>
       </section>
 

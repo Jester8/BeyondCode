@@ -45,8 +45,8 @@ export function MagneticLink({
         href={href}
         className={
           secondary
-            ? 'inline-flex min-h-12 items-center justify-center rounded-full border border-black/15 px-6 text-sm font-bold text-ink transition duration-300 hover:border-black/35 hover:bg-black/[0.03]'
-            : 'inline-flex min-h-12 items-center justify-center rounded-full bg-tangerine px-6 text-sm font-bold text-white transition duration-300 hover:bg-[#e93d2a] hover:shadow-lg hover:shadow-tangerine/20'
+            ? 'inline-flex min-h-12 items-center justify-center rounded-full border-2 border-current px-6 text-sm font-extrabold uppercase tracking-wide text-ink transition duration-300 hover:bg-ink hover:text-white'
+            : 'inline-flex min-h-12 items-center justify-center rounded-full bg-lime px-6 text-sm font-extrabold uppercase tracking-wide text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-[#a8dc24] hover:shadow-lg hover:shadow-black/10'
         }
       >
         {children}

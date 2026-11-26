@@ -83,7 +83,7 @@ export default function AboutPage() {
           {[
             ['01', 'The theme', 'The Business of Tech: markets, sales, money and everything that comes after the code.'],
             ['02', 'The format', 'Four sessions, a networking break, the Ask Board, breakout games and a demo corner.'],
-            ['03', 'The room', '200 seats on Saturday 27 March 2027, 11:00am to 3:00pm in Ibadan.'],
+            ['03', 'The room', '200 seats on Saturday 3 April 2027, 11:00am to 3:00pm in Ibadan.'],
           ].map(([number, title, copy], index) => (
             <Reveal key={title} delay={index * 80}>
               <FeatureCard number={number} title={title} accent={index === 1 ? 'lime' : 'violet'}>

@@ -13,7 +13,7 @@ export function KineticTitle() {
   return (
     <h1
       aria-label="Beyond Code"
-      className="mt-7 text-[clamp(3.6rem,10vw,7.5rem)] font-extrabold leading-[0.87] tracking-[-0.075em] text-ink"
+      className="mt-7 text-[clamp(4rem,13vw,9rem)] font-extrabold leading-[0.86] tracking-[-0.075em] text-white"
     >
       <span className="block overflow-hidden" aria-hidden="true">
         <motion.span
@@ -32,7 +32,7 @@ export function KineticTitle() {
           animate={{ y: 0 }}
           transition={wordTransition(0.2)}
         >
-          Code<span className="text-tangerine">.</span>
+          Code<span className="text-lime">.</span>
         </motion.span>
       </span>
     </h1>

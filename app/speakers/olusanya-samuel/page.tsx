@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Reveal } from '@/components/reveal';
+import { ArrowLeftIcon } from '@/components/icons';
 import {
   ButtonLink,
   Container,
@@ -16,27 +17,28 @@ export const metadata = {
 export default function OlusanyaSamuelPage() {
   return (
     <main id="main-content">
-      <section className="bg-paper pb-14 pt-36 sm:pb-20 sm:pt-44">
-        <Container className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="stage-panel relative overflow-hidden pb-14 pt-48 text-white sm:pb-20 sm:pt-52">
+        <Container className="relative z-10 grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <Link
               href="/speakers"
-              className="inline-flex min-h-10 items-center text-sm font-bold text-violet transition hover:text-tangerine"
+              className="inline-flex min-h-10 items-center gap-2 text-sm font-bold text-white/80 transition hover:text-lime"
             >
-              ← All speakers
+              <ArrowLeftIcon className="h-3.5 w-3.5 shrink-0" />
+              All speakers
             </Link>
-            <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.2em] text-tangerine">
+            <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.2em] text-lime">
               Convener and host
             </p>
-            <h1 className="mt-4 text-5xl font-extrabold leading-[0.98] tracking-[-0.055em] text-ink sm:text-7xl">
+            <h1 className="mt-4 text-5xl font-extrabold leading-[0.98] tracking-[-0.055em] text-white sm:text-7xl">
               Olusanya
               <br />
               Samuel A.
             </h1>
-            <p className="mt-5 text-lg font-semibold text-black/55">
+            <p className="mt-5 text-lg font-semibold text-white/65">
               Full-stack Developer · 5+ years of experience
             </p>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-black/65 sm:text-lg">
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
               Based in Ibadan, Nigeria, Olusanya builds responsive, scalable
               web and mobile products. He focuses on clean architecture,
               thoughtful user experience, visual quality and performance.
