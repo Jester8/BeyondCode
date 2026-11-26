@@ -1,18 +1,19 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRightIcon } from '@/components/icons';
 
 const COMMUNITY_LINK =
   'https://chat.whatsapp.com/G5V3RW0XNik9IA6WVmspR4';
-const DISMISSED_KEY = 'beyond-code-community-invite-dismissed';
+const HIDE_INVITE_KEY = 'beyond-code-community-invite-hidden';
 
 export function CommunityInviteModal() {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const [dontShowAgain, setDontShowAgain] = useState(false);
 
   useEffect(() => {
-    if (window.sessionStorage.getItem(DISMISSED_KEY)) return;
+    if (window.localStorage.getItem(HIDE_INVITE_KEY)) return;
 
     const timer = window.setTimeout(() => {
       dialogRef.current?.showModal();
@@ -21,12 +22,14 @@ export function CommunityInviteModal() {
     return () => window.clearTimeout(timer);
   }, []);
 
-  function rememberDismissal() {
-    window.sessionStorage.setItem(DISMISSED_KEY, 'true');
+  function rememberPreference() {
+    if (dontShowAgain) {
+      window.localStorage.setItem(HIDE_INVITE_KEY, 'true');
+    }
   }
 
   function dismiss() {
-    rememberDismissal();
+    rememberPreference();
     dialogRef.current?.close();
   }
 
@@ -34,7 +37,7 @@ export function CommunityInviteModal() {
     <dialog
       ref={dialogRef}
       aria-labelledby="community-invite-title"
-      onClose={rememberDismissal}
+      onClose={rememberPreference}
       onClick={(event) => {
         if (event.target === event.currentTarget) dismiss();
       }}
@@ -79,6 +82,15 @@ export function CommunityInviteModal() {
           <p className="mt-3 text-sm leading-relaxed text-black/60 sm:text-base">
             Connect with people building, growing and shaping technology.
           </p>
+          <label className="mt-5 flex w-fit cursor-pointer items-center gap-2 text-sm font-semibold text-black/60">
+            <input
+              type="checkbox"
+              checked={dontShowAgain}
+              onChange={(event) => setDontShowAgain(event.target.checked)}
+              className="h-4 w-4 accent-violet"
+            />
+            Don’t show this again
+          </label>
           <a
             href={COMMUNITY_LINK}
             target="_blank"

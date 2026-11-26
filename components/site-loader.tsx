@@ -3,18 +3,14 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-const LOADER_KEY = 'beyond-code-loader-complete';
+const MINIMUM_LOADER_DURATION_MS = 4000;
+const FADE_DURATION_MS = 350;
 
 export function SiteLoader() {
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    if (window.sessionStorage.getItem(LOADER_KEY)) {
-      setVisible(false);
-      return;
-    }
-
     const startedAt = performance.now();
     const progressTimer = window.setInterval(() => {
       setProgress((current) =>
@@ -37,14 +33,17 @@ export function SiteLoader() {
 
     Promise.all([pageReady, document.fonts.ready]).then(() => {
       if (cancelled) return;
-      const remainingTime = Math.max(0, 1100 - (performance.now() - startedAt));
+      const progressEndTime = MINIMUM_LOADER_DURATION_MS - FADE_DURATION_MS;
+      const remainingTime = Math.max(
+        0,
+        progressEndTime - (performance.now() - startedAt),
+      );
       finishTimer = window.setTimeout(() => {
         window.clearInterval(progressTimer);
         setProgress(100);
         hideTimer = window.setTimeout(() => {
-          window.sessionStorage.setItem(LOADER_KEY, 'true');
           setVisible(false);
-        }, 350);
+        }, FADE_DURATION_MS);
       }, remainingTime);
     });
 

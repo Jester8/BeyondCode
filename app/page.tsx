@@ -100,7 +100,7 @@ export default function HomePage() {
             <ButtonLink href="/register" fullWidth>
               Reserve your seat
             </ButtonLink>
-            <ButtonLink href="/programme" secondary fullWidth>
+            <ButtonLink href="/programme" secondary fullWidth onDark>
               Explore the programme
             </ButtonLink>
           </div>

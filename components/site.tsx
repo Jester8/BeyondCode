@@ -83,17 +83,20 @@ export function ButtonLink({
   children,
   secondary = false,
   fullWidth = false,
+  onDark = false,
 }: {
   href: string;
   children: React.ReactNode;
   secondary?: boolean;
   fullWidth?: boolean;
+  onDark?: boolean;
 }) {
   return (
     <MagneticLink
       href={href}
       secondary={secondary}
       fullWidth={fullWidth}
+      onDark={onDark}
     >
       {children}
     </MagneticLink>
@@ -103,7 +106,7 @@ export function ButtonLink({
 export function EventCta() {
   return (
     <section className="py-16 sm:py-24">
-      <Container className="stage-panel relative overflow-hidden rounded-[2rem] px-7 py-12 text-white sm:px-14 sm:py-16">
+      <Container className="stage-panel relative overflow-hidden rounded-none px-7 py-12 text-white sm:rounded-[2rem] sm:px-14 sm:py-16">
         <div className="relative z-10 grid items-end gap-8 md:grid-cols-[1fr_auto]">
           <div className="max-w-2xl">
             <Eyebrow>Save your seat</Eyebrow>
