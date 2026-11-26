@@ -402,7 +402,7 @@ export default function HomePage() {
       </section>
 
       <section className="py-16 sm:py-24">
-        <Container className="stage-panel relative overflow-hidden rounded-[2rem] px-7 py-12 text-white sm:px-14 sm:py-16">
+        <Container className="relative overflow-hidden rounded-none bg-ink px-7 py-12 text-white sm:rounded-[2rem] sm:px-14 sm:py-16">
           <div className="relative z-10 grid items-end gap-8 md:grid-cols-[1fr_auto]">
             <div className="max-w-2xl">
               <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-lime">
