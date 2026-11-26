@@ -43,7 +43,7 @@ export default function EventsPage() {
               </p>
             </div>
             <article className="grid overflow-hidden rounded-[2rem] border border-black/[0.07] bg-white shadow-card lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="relative min-h-[300px] bg-ink sm:min-h-[440px] lg:min-h-[560px]">
+              <div className="relative min-h-[300px] bg-white sm:min-h-[440px] lg:min-h-[560px]">
                 <Image
                   src="/assets/business-of-tech-event.png"
                   alt="Beyond Code: The Business of Tech neon conference poster with an auditorium audience"
@@ -76,9 +76,11 @@ export default function EventsPage() {
                     </div>
                   ))}
                 </dl>
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <ButtonLink href="/register">Reserve your seat</ButtonLink>
-                  <ButtonLink href="/programme" secondary>
+                <div className="mt-7 grid w-full max-w-[360px] grid-cols-2 gap-2 sm:flex sm:w-auto sm:max-w-none sm:gap-3">
+                  <ButtonLink href="/register" fullWidth>
+                    Reserve your seat
+                  </ButtonLink>
+                  <ButtonLink href="/programme" secondary fullWidth>
                     View programme
                   </ButtonLink>
                 </div>

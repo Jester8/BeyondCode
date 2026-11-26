@@ -7,8 +7,7 @@ import {
   motion,
   useReducedMotion,
 } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import type { PointerEvent } from 'react';
+import { useResponsiveCarousel } from '@/components/use-responsive-carousel';
 
 type Speaker = {
   name: string;
@@ -123,52 +122,8 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
 }
 
 export function SpeakerRoster() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const reduceMotion = useReducedMotion();
-  const swipeStart = useRef<{ x: number; y: number } | null>(null);
-
-  function handleSwipeStart(event: PointerEvent<HTMLDivElement>) {
-    if (event.pointerType === 'mouse' && event.button !== 0) return;
-    swipeStart.current = { x: event.clientX, y: event.clientY };
-  }
-
-  function handleSwipeEnd(event: PointerEvent<HTMLDivElement>) {
-    const start = swipeStart.current;
-    swipeStart.current = null;
-    if (!start) return;
-
-    const horizontal = event.clientX - start.x;
-    const vertical = event.clientY - start.y;
-    if (Math.abs(horizontal) < 48 || Math.abs(horizontal) < Math.abs(vertical)) {
-      return;
-    }
-
-    setActiveIndex((index) =>
-      horizontal < 0
-        ? (index + 1) % speakers.length
-        : (index - 1 + speakers.length) % speakers.length,
-    );
-  }
-
-  useEffect(() => {
-    const breakpoint = window.matchMedia('(max-width: 767px)');
-    const updateBreakpoint = () => setIsMobile(breakpoint.matches);
-    updateBreakpoint();
-    breakpoint.addEventListener('change', updateBreakpoint);
-
-    return () => breakpoint.removeEventListener('change', updateBreakpoint);
-  }, []);
-
-  useEffect(() => {
-    if (reduceMotion || !isMobile) return;
-
-    const timer = window.setTimeout(() => {
-      setActiveIndex((index) => (index + 1) % speakers.length);
-    }, 4800);
-
-    return () => window.clearTimeout(timer);
-  }, [activeIndex, isMobile, reduceMotion]);
+  const { activeIndex, setActiveIndex, reduceMotion, swipeHandlers } =
+    useResponsiveCarousel(speakers.length);
 
   return (
     <>
@@ -186,11 +141,7 @@ export function SpeakerRoster() {
       >
         <div
           className="overflow-hidden touch-pan-y"
-          onPointerDown={handleSwipeStart}
-          onPointerUp={handleSwipeEnd}
-          onPointerCancel={() => {
-            swipeStart.current = null;
-          }}
+          {...swipeHandlers}
         >
           <AnimatePresence initial={false} mode="wait">
             <motion.div

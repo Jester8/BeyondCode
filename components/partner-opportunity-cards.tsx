@@ -1,5 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowUpRightIcon } from '@/components/icons';
+import { useResponsiveCarousel } from '@/components/use-responsive-carousel';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
   partnerOpportunities,
   type PartnerOpportunity,
@@ -44,46 +48,115 @@ export function PartnerOpportunityCards({
   opportunities?: PartnerOpportunity[];
   compact?: boolean;
 }) {
+  const { activeIndex, setActiveIndex, reduceMotion, swipeHandlers } =
+    useResponsiveCarousel(opportunities.length);
+
+  if (opportunities.length === 0) return null;
+
   return (
-    <div className="space-y-4">
-      {opportunities.map((opportunity, index) => (
-        <Link
-          key={opportunity.slug}
-          href={`/partners/${opportunity.slug}`}
-          className="group block rounded-3xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
-        >
-          <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-ink text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-card md:flex-row">
-            <PartnerLogoPlaceholder
-              opportunity={opportunity}
-              compact={compact}
+    <>
+      <div className="hidden space-y-4 md:block">
+        {opportunities.map((opportunity, index) => (
+          <PartnerOpportunityCard
+            key={opportunity.slug}
+            opportunity={opportunity}
+            index={index}
+            compact={compact}
+          />
+        ))}
+      </div>
+
+      <div
+        aria-label="Partner opportunities"
+        aria-roledescription="carousel"
+        role="region"
+        className="md:hidden"
+      >
+        <div className="overflow-hidden touch-pan-y" {...swipeHandlers}>
+          <AnimatePresence initial={false} mode="wait">
+            <motion.div
+              key={opportunities[activeIndex].slug}
+              initial={reduceMotion ? false : { opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={reduceMotion ? undefined : { opacity: 0, x: 40 }}
+              transition={{
+                duration: reduceMotion ? 0 : 0.45,
+                ease: 'easeInOut',
+              }}
+            >
+              <PartnerOpportunityCard
+                opportunity={opportunities[activeIndex]}
+                index={activeIndex}
+                compact={compact}
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+        <div className="mt-5 flex items-center justify-center gap-2">
+          {opportunities.map((opportunity, index) => (
+            <button
+              key={opportunity.slug}
+              type="button"
+              aria-label={`Show ${opportunity.title}`}
+              aria-current={index === activeIndex ? 'true' : undefined}
+              onClick={() => setActiveIndex(index)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                index === activeIndex
+                  ? 'w-8 bg-violet'
+                  : 'w-1.5 bg-black/20 hover:bg-black/50'
+              }`}
             />
-            <div className="flex flex-1 flex-col justify-center p-5 sm:p-7">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-lime">
-                    Opportunity {String(index + 1).padStart(2, '0')}
-                  </p>
-                  <h3 className="mt-2 text-xl font-extrabold text-white sm:text-2xl">
-                    {opportunity.title}
-                  </h3>
-                </div>
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/20 text-white transition-colors group-hover:border-lime group-hover:text-lime">
-                  <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </span>
-              </div>
-              <div className="mt-4">
-                <p className="max-w-3xl text-sm leading-relaxed text-white/65">
-                  {opportunity.summary}
-                </p>
-                <p className="mt-4 text-xs font-extrabold uppercase tracking-[0.12em] text-lime">
-                  See what this partner could do
-                </p>
-              </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
+function PartnerOpportunityCard({
+  opportunity,
+  index,
+  compact,
+}: {
+  opportunity: PartnerOpportunity;
+  index: number;
+  compact: boolean;
+}) {
+  return (
+    <Link
+      href={`/partners/${opportunity.slug}`}
+      className="group block rounded-3xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+    >
+      <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-ink text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-card md:flex-row">
+        <PartnerLogoPlaceholder
+          opportunity={opportunity}
+          compact={compact}
+        />
+        <div className="flex flex-1 flex-col justify-center p-5 sm:p-7">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-lime">
+                Opportunity {String(index + 1).padStart(2, '0')}
+              </p>
+              <h3 className="mt-2 text-xl font-extrabold text-white sm:text-2xl">
+                {opportunity.title}
+              </h3>
             </div>
-          </article>
-        </Link>
-      ))}
-    </div>
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/20 text-white transition-colors group-hover:border-lime group-hover:text-lime">
+              <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          </div>
+          <div className="mt-4">
+            <p className="max-w-3xl text-sm leading-relaxed text-white/65">
+              {opportunity.summary}
+            </p>
+            <p className="mt-4 text-xs font-extrabold uppercase tracking-[0.12em] text-lime">
+              See what this partner could do
+            </p>
+          </div>
+        </div>
+      </article>
+    </Link>
   );
 }
 

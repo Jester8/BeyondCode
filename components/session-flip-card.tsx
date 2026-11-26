@@ -60,7 +60,10 @@ export function SessionFlipCard({
           ease: [0.2, 0.7, 0.2, 1],
         }}
       >
-        <span className={`session-flip-face ${colors.front}`} aria-hidden={flipped}>
+        <span
+          className={`session-flip-face ${colors.front}`}
+          aria-hidden={flipped || undefined}
+        >
           <span>
             <span className={`text-xs font-extrabold uppercase tracking-[0.16em] ${colors.detail}`}>
               {number}
@@ -73,7 +76,10 @@ export function SessionFlipCard({
             Tap to flip
           </span>
         </span>
-        <span className="session-flip-face session-flip-back border-ink bg-ink p-6 text-white sm:p-7">
+        <span
+          className="session-flip-face session-flip-back border-ink bg-ink p-6 text-white sm:p-7"
+          aria-hidden={!flipped || undefined}
+        >
           <span className="text-xs font-extrabold uppercase tracking-[0.16em] text-lime">
             Session details
           </span>

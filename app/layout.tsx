@@ -5,6 +5,7 @@ import './globals.css';
 import { SiteFooter } from '@/components/site';
 import { SiteHeader } from '@/components/site-header';
 import { BackToTop } from '@/components/back-to-top';
+import { CommunityInviteModal } from '@/components/community-invite-modal';
 
 export const metadata: Metadata = {
   title: {
@@ -37,6 +38,7 @@ export default function RootLayout({
         {children}
         <SiteFooter />
         <BackToTop />
+        <CommunityInviteModal />
       </body>
     </html>
   );
