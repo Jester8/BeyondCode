@@ -1,14 +1,36 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-const MINIMUM_LOADER_DURATION_MS = 4000;
+const MINIMUM_LOADER_DURATION_MS = 5000;
 const FADE_DURATION_MS = 350;
+
+function playLoaderTone(context: AudioContext) {
+  const startedAt = context.currentTime;
+  const gain = context.createGain();
+  gain.gain.setValueAtTime(0.0001, startedAt);
+  gain.gain.exponentialRampToValueAtTime(0.045, startedAt + 0.05);
+  gain.gain.exponentialRampToValueAtTime(0.0001, startedAt + 0.75);
+  gain.connect(context.destination);
+
+  [440, 660, 880].forEach((frequency, index) => {
+    const oscillator = context.createOscillator();
+    oscillator.type = 'sine';
+    oscillator.frequency.value = frequency;
+    oscillator.connect(gain);
+    oscillator.start(startedAt + index * 0.08);
+    oscillator.stop(startedAt + 0.75);
+  });
+}
 
 export function SiteLoader() {
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [soundEnabled, setSoundEnabled] = useState(false);
+  const [soundUnavailable, setSoundUnavailable] = useState(false);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const soundEnabledRef = useRef(false);
 
   useEffect(() => {
     const startedAt = performance.now();
@@ -29,6 +51,7 @@ export function SiteLoader() {
 
     let finishTimer = 0;
     let hideTimer = 0;
+    let audioCloseTimer = 0;
     let cancelled = false;
 
     Promise.all([pageReady, document.fonts.ready]).then(() => {
@@ -41,8 +64,18 @@ export function SiteLoader() {
       finishTimer = window.setTimeout(() => {
         window.clearInterval(progressTimer);
         setProgress(100);
+        if (soundEnabledRef.current && audioContextRef.current?.state === 'running') {
+          playLoaderTone(audioContextRef.current);
+        }
         hideTimer = window.setTimeout(() => {
           setVisible(false);
+          const audioContext = audioContextRef.current;
+          if (audioContext && audioContext.state !== 'closed') {
+            audioCloseTimer = window.setTimeout(() => {
+              void audioContext.close();
+              audioContextRef.current = null;
+            }, 900);
+          }
         }, FADE_DURATION_MS);
       }, remainingTime);
     });
@@ -52,8 +85,46 @@ export function SiteLoader() {
       window.clearInterval(progressTimer);
       window.clearTimeout(finishTimer);
       window.clearTimeout(hideTimer);
+      window.clearTimeout(audioCloseTimer);
+      const audioContext = audioContextRef.current;
+      if (audioContext && audioContext.state !== 'closed') {
+        void audioContext.close();
+      }
     };
   }, []);
+
+  function toggleSound() {
+    if (soundEnabledRef.current) {
+      soundEnabledRef.current = false;
+      setSoundEnabled(false);
+      const audioContext = audioContextRef.current;
+      if (audioContext?.state === 'running') void audioContext.suspend();
+      return;
+    }
+
+    const AudioContextConstructor = window.AudioContext;
+    if (!AudioContextConstructor) {
+      setSoundUnavailable(true);
+      return;
+    }
+
+    const audioContext =
+      audioContextRef.current ?? new AudioContextConstructor();
+    audioContextRef.current = audioContext;
+    void audioContext
+      .resume()
+      .then(() => {
+        soundEnabledRef.current = true;
+        setSoundEnabled(true);
+        setSoundUnavailable(false);
+        playLoaderTone(audioContext);
+      })
+      .catch(() => {
+        soundEnabledRef.current = false;
+        setSoundEnabled(false);
+        setSoundUnavailable(true);
+      });
+  }
 
   if (!visible) return null;
 
@@ -67,8 +138,10 @@ export function SiteLoader() {
       <div aria-hidden="true" className="site-loader-grid absolute inset-0" />
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-1/2 h-[min(70vw,34rem)] w-[min(70vw,34rem)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet/20"
+        className="site-loader-ring absolute left-1/2 top-1/2 h-[min(70vw,34rem)] w-[min(70vw,34rem)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet/20"
       />
+      <div aria-hidden="true" className="site-loader-orbit absolute left-1/2 top-1/2 h-[min(86vw,42rem)] w-[min(86vw,42rem)] rounded-full border border-dashed border-white/10" />
+      <div aria-hidden="true" className="site-loader-scan absolute inset-x-0 top-0 h-40" />
       <div className="relative w-full max-w-md">
         <div className="mb-10 flex items-center justify-between border-b border-white/10 pb-3 text-[9px] font-bold uppercase tracking-[0.24em] text-white/45">
           <span>Beyond Code / 2027</span>
@@ -114,6 +187,45 @@ export function SiteLoader() {
         <div className="mt-3 flex justify-between text-[9px] font-bold uppercase tracking-[0.18em] text-white/35">
           <span>Connecting</span>
           <span>Ready {String(progress).padStart(2, '0')}</span>
+        </div>
+        <div className="mt-8 flex flex-col items-center gap-2">
+          <button
+            type="button"
+            aria-pressed={soundEnabled}
+            onClick={toggleSound}
+            disabled={progress === 100}
+            className="inline-flex min-h-10 items-center gap-2 border border-white/20 px-4 text-[10px] font-bold uppercase tracking-[0.16em] text-white/75 transition hover:border-lime hover:text-lime disabled:opacity-40"
+          >
+            <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M3 8v4h3l4 3V5L6 8H3Z"
+                stroke="currentColor"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+              />
+              {soundEnabled ? (
+                <path
+                  d="M13 7a4 4 0 0 1 0 6m2-8a7 7 0 0 1 0 10"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeWidth="1.5"
+                />
+              ) : (
+                <path
+                  d="m13 8 4 4m0-4-4 4"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeWidth="1.5"
+                />
+              )}
+            </svg>
+            {soundEnabled ? 'Sound on' : 'Enable sound'}
+          </button>
+          {soundUnavailable && (
+            <p role="status" className="text-[10px] text-tangerine">
+              Sound is unavailable in this browser.
+            </p>
+          )}
         </div>
       </div>
     </div>

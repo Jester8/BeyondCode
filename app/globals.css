@@ -45,6 +45,28 @@ h6 {
     linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, #000 8%, transparent 78%);
+  animation: loader-grid-drift 18s linear infinite;
+  pointer-events: none;
+}
+
+.site-loader-ring {
+  animation: loader-ring-pulse 3s ease-in-out infinite;
+}
+
+.site-loader-orbit {
+  transform: translate(-50%, -50%);
+  animation: loader-orbit 36s linear infinite;
+  pointer-events: none;
+}
+
+.site-loader-scan {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgb(148 205 1 / 8%),
+    transparent
+  );
+  animation: loader-scan 4.5s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -215,6 +237,37 @@ h6 {
   }
 }
 
+@keyframes loader-grid-drift {
+  to {
+    background-position: 48px 48px;
+  }
+}
+
+@keyframes loader-ring-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes loader-orbit {
+  to {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+@keyframes loader-scan {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -250,6 +303,13 @@ h6 {
   }
 
   .event-ticker-track {
+    animation: none;
+  }
+
+  .site-loader-grid,
+  .site-loader-ring,
+  .site-loader-orbit,
+  .site-loader-scan {
     animation: none;
   }
 }
