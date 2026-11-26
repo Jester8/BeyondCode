@@ -15,7 +15,7 @@ export default function TeamPage() {
       <PageIntro
         eyebrow="The people behind Beyond Code"
         title="Meet the team."
-        description="A focused day for the tech community takes a team of people who care about what happens beyond the code."
+        description="Bringing the tech community together takes a team who care about what happens beyond the code."
       />
 
       <section className="py-14 sm:py-20">

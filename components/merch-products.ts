@@ -139,18 +139,17 @@ export const merchProducts: MerchProduct[] = [
     image: '/assets/merch/bottles.png',
     description: 'Branded reusable bottles in two understated finishes.',
     price: '₦10,000',
+    imageFit: 'contain',
     images: [
       {
         src: '/assets/merch/bottles.png',
         color: 'White',
         alt: 'White Beyond Code bottle',
-        cropPosition: '0%',
       },
       {
         src: '/assets/merch/bottles.png',
         color: 'Black',
         alt: 'Black Beyond Code bottle',
-        cropPosition: '-102%',
       },
     ],
     colors: [

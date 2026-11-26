@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: '%s | Beyond Code 2027',
   },
   description:
-    'A focused day for 200 tech professionals to trade real numbers, honest feedback and useful introductions. Saturday 3 April 2027 in Ibadan, Nigeria.',
+    'Tech professionals come together to trade real numbers, honest feedback and useful introductions. Saturday 3 April 2027 in Ibadan, Nigeria.',
 };
 
 export const viewport: Viewport = {

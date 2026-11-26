@@ -61,7 +61,7 @@ export default function EventsPage() {
                   The Business of Tech
                 </h2>
                 <p className="mt-4 max-w-xl leading-relaxed text-black/60">
-                  Everything that happens after the code. Spend one focused day
+                  Everything that happens after the code. Spend a day
                   trading real numbers, honest feedback and useful
                   introductions with tech professionals from across the
                   community.

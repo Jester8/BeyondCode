@@ -92,9 +92,8 @@ export default function HomePage() {
             )}
           </div>
           <p className="hero-entrance-delayed mt-7 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg">
-            Everything that happens after the code. A focused day for 200 tech
-            professionals to trade real numbers, honest feedback and useful
-            introductions.
+            Everything that happens after the code. A day for tech professionals
+            to trade real numbers, honest feedback and useful introductions.
           </p>
           <div className="hero-entrance-delayed mt-8 grid w-full max-w-[360px] grid-cols-2 gap-2 sm:flex sm:w-auto sm:max-w-none sm:gap-3">
             <ButtonLink href="/register" fullWidth>
@@ -136,9 +135,8 @@ export default function HomePage() {
       </section>
 
       <section aria-label="The event in numbers" className="border-y border-white/10 bg-ink text-white">
-        <Container className="grid grid-cols-2 gap-6 py-8 sm:grid-cols-4 sm:py-10">
+        <Container className="grid grid-cols-3 gap-3 py-8 sm:gap-6 sm:py-10">
           {[
-            ['200', 'People'],
             ['4', 'Hours'],
             ['4', 'Sessions'],
             ['5', 'Guest speakers'],
@@ -423,7 +421,7 @@ export default function HomePage() {
                 Sponsor. Partner. Be a part.
               </h2>
               <p className="mt-4 text-white/75">
-                Help shape a focused day for the people building Nigeria’s
+                Help shape an event for the people building Nigeria’s
                 technology community.
               </p>
             </div>

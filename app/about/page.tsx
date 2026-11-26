@@ -28,7 +28,7 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="About the event"
         title="Everything after the code."
-        description="Beyond Code is a focused day for 200 tech professionals. No fluff, no filler. Just practical sessions, real numbers and people who can help."
+        description="Beyond Code brings tech professionals together for practical sessions, real numbers and people who can help."
       />
 
       <section className="py-12 sm:py-16">
@@ -60,7 +60,7 @@ export default function AboutPage() {
         <Container className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
           <Reveal>
             <SectionHeading eyebrow="What it is">
-              The business side of tech, in one focused day.
+              The business side of tech, beyond the code.
             </SectionHeading>
           </Reveal>
           <Reveal>
@@ -83,7 +83,7 @@ export default function AboutPage() {
           {[
             ['01', 'The theme', 'The Business of Tech: markets, sales, money and everything that comes after the code.'],
             ['02', 'The format', 'Four sessions, a networking break, the Ask Board, breakout games and a demo corner.'],
-            ['03', 'The room', '200 seats on Saturday 3 April 2027, 11:00am to 3:00pm in Ibadan.'],
+            ['03', 'The room', 'Saturday 3 April 2027, 11:00am to 3:00pm in Ibadan.'],
           ].map(([number, title, copy], index) => (
             <Reveal key={title} delay={index * 80}>
               <FeatureCard number={number} title={title} accent={index === 1 ? 'lime' : 'violet'}>

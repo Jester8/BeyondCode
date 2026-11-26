@@ -40,8 +40,7 @@ export function SiteHeader() {
         className="hidden overflow-hidden bg-ink py-2 text-white sm:block"
       >
         <p className="sr-only">
-          Saturday 3 April 2027, Ibadan, Oyo State, 11:00am to 3:00pm, 200
-          seats.
+          Saturday 3 April 2027, Ibadan, Oyo State, 11:00am to 3:00pm.
         </p>
         <div className="event-ticker" aria-hidden="true">
           <div className="event-ticker-track">
@@ -54,7 +53,6 @@ export function SiteHeader() {
                   'Saturday 3 April 2027',
                   'Ibadan, Oyo State',
                   '11:00am — 3:00pm',
-                  '200 seats',
                   'The Business of Tech',
                 ].map((detail) => (
                   <span key={detail} className="flex items-center gap-5 sm:gap-8">
@@ -134,7 +132,7 @@ export function SiteHeader() {
           </p>
           <p className="whitespace-nowrap text-center text-black/60">Ibadan, Oyo State</p>
           <p className="whitespace-nowrap text-right font-extrabold text-violet">
-            200 seats · 11am
+            11am – 3pm
           </p>
         </div>
       </div>

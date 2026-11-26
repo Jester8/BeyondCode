@@ -17,7 +17,6 @@ const steps = [
 
 const questions = [
   ['Who can attend?', 'Anyone who works in or near tech: founders, engineers, product people, sales and marketing, students and investors.'],
-  ['How many seats are there?', '200. When they are gone, they are gone.'],
   ['What time does it start and end?', 'Doors open for an 11:00am start and the day closes at 3:00pm on Saturday 3 April 2027.'],
   ['Where is it?', 'The venue is still to be confirmed. Everyone who registers hears first.'],
   ['What is the Ask Board?', 'A board where you post one ask and one offer. You will meet people who can help with yours and need yours.'],

@@ -111,7 +111,7 @@ export function EventCta() {
           <div className="max-w-2xl">
             <Eyebrow>Save your seat</Eyebrow>
             <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-[-0.04em] sm:text-5xl">
-              One Saturday. 200 people. Conversations that move you forward.
+              One Saturday. Conversations that move you forward.
             </h2>
             <p className="mt-4 text-white/65">
               Saturday 3 April 2027 · Ibadan, Oyo State
