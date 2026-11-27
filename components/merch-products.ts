@@ -24,6 +24,66 @@ export type MerchProduct = {
 
 export const merchProducts: MerchProduct[] = [
   {
+    slug: 'jotter',
+    name: 'Jotters',
+    image: '/assets/merch/jotter-white.png',
+    description: 'Two branded Beyond Code wire-bound jotters in white and navy.',
+    price: '₦3,000',
+    imageFit: 'contain',
+    images: [
+      {
+        src: '/assets/merch/jotter-white.png',
+        color: 'White',
+        alt: 'White Beyond Code branded jotter',
+      },
+      {
+        src: '/assets/merch/jotter-navy.png',
+        color: 'Navy',
+        alt: 'Navy Beyond Code branded jotter',
+      },
+    ],
+    colors: [
+      { name: 'White', imageIndex: 0, swatch: 'bg-white' },
+      { name: 'Navy', imageIndex: 1, swatch: 'bg-[#101C35]' },
+    ],
+  },
+  {
+    slug: 'pen',
+    name: 'Pens',
+    image: '/assets/merch/pen-colors.png',
+    description: 'A free Beyond Code branded pen, available in assorted colors.',
+    price: 'Free',
+    imageFit: 'contain',
+    images: [
+      {
+        src: '/assets/merch/pen-colors.png',
+        color: 'Assorted',
+        alt: 'Assorted Beyond Code branded pens',
+      },
+      {
+        src: '/assets/merch/pen-navy.png',
+        color: 'Navy',
+        alt: 'Navy Beyond Code branded pen',
+      },
+      {
+        src: '/assets/merch/pen-white.png',
+        color: 'White',
+        alt: 'White Beyond Code branded pen',
+      },
+      {
+        src: '/assets/merch/pen-purple.png',
+        color: 'Purple',
+        alt: 'Purple Beyond Code branded pen',
+      },
+    ],
+    colors: [
+      { name: 'Assorted', imageIndex: 0, swatch: 'bg-gradient-to-r from-[#101C35] via-white to-[#7C3AED]' },
+      { name: 'Navy', imageIndex: 1, swatch: 'bg-[#101C35]' },
+      { name: 'White', imageIndex: 2, swatch: 'bg-white' },
+      { name: 'Purple', imageIndex: 3, swatch: 'bg-[#7C3AED]' },
+    ],
+  },
+  {
     slug: 'bucket-hat',
     name: 'Bucket hats',
     image: '/assets/merch/bucket-hat.png',
@@ -161,7 +221,7 @@ export const merchProducts: MerchProduct[] = [
 
 export const merchBundle = {
   name: 'All-in bundle',
-  price: '₦25,000',
+  price: '₦35,000',
   saving: 'Save ₦2,000',
   description:
     'Get one bucket hat, T-shirt, tote bag, and bottle together for one bundle price.',

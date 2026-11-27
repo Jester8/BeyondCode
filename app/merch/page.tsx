@@ -13,12 +13,12 @@ export const metadata = {
 
 const merchShowcase = [
   {
-    src: '/assets/merch/tote-navy.png',
-    alt: 'Navy Beyond Code tote bag',
+    src: '/assets/merch/jotter-navy.png',
+    alt: 'Navy Beyond Code branded jotter',
   },
   {
-    src: '/assets/merch/tshirt-black-logo.png',
-    alt: 'Black Beyond Code T-shirt with the colorful logo',
+    src: '/assets/merch/pen-colors.png',
+    alt: 'Assorted Beyond Code branded pens',
   },
   {
     src: '/assets/merch/tshirt-white-geometric.png',
@@ -99,40 +99,40 @@ export default function MerchPage() {
             </a>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            aria-label="Beyond Code merchandise"
+            role="region"
+            className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4"
+          >
             {merchProducts.map((product) => (
               <Link
                 key={product.name}
                 href={`/merch/${product.slug}`}
                 aria-label={`Order Beyond Code ${product.name}; choose a color`}
-                className="group overflow-hidden rounded-3xl border border-black/[0.07] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-card"
+                className="group flex w-[min(76vw,280px)] shrink-0 snap-start flex-col overflow-hidden border border-black/[0.07] bg-white transition duration-300 hover:-translate-y-1 hover:shadow-card sm:w-[min(38vw,280px)] lg:w-[280px]"
               >
-                <div className="relative aspect-[1.47] overflow-hidden bg-paper">
+                <div className="relative aspect-[1.2] overflow-hidden bg-paper">
                   <Image
                     src={product.image}
                     alt={`Beyond Code ${product.name}`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className={
-                      product.imageFit === 'contain'
-                        ? 'object-contain p-2 sm:p-3'
-                        : 'object-cover transition-transform duration-700 group-hover:scale-[1.03]'
-                    }
+                    className="object-contain p-2 transition-transform duration-700 group-hover:scale-[1.03] sm:p-3"
                   />
                 </div>
-                <div className="p-5">
-                  <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-ink">
+                <div className="flex min-h-28 flex-1 flex-col p-4">
+                  <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-ink">
                     {product.price}
                   </p>
-                  <h3 className="mt-2 text-xl font-extrabold text-ink">
+                  <h3 className="mt-1.5 text-lg font-extrabold text-ink">
                     {product.name}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-black/55">
+                  <p className="mt-1.5 text-xs leading-relaxed text-black/55">
                     {product.description}
                   </p>
-                  <span className="mt-5 inline-flex min-h-10 items-center gap-2 whitespace-nowrap rounded-full bg-ink px-4 text-xs font-extrabold text-white transition group-hover:bg-black">
+                  <span className="mt-auto inline-flex min-h-8 items-center gap-1.5 whitespace-nowrap rounded-full bg-ink px-3 text-[10px] font-extrabold text-white transition group-hover:bg-black">
                     Order now
-                    <ArrowUpRightIcon className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRightIcon className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </div>
               </Link>

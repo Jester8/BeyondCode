@@ -49,7 +49,7 @@ export default function OlusanyaSamuelPage() {
           </div>
           <Reveal className="relative mx-auto aspect-[0.8] w-full max-w-sm overflow-hidden rounded-[2rem] bg-white shadow-card">
             <Image
-              src="/assets/speaker_1_full.jpg"
+              src="/assets/sam-web.jpg"
               alt="Olusanya Samuel A."
               fill
               priority

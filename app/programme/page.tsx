@@ -110,11 +110,13 @@ export default function ProgrammePage() {
             {sessions.map((session, index) => (
               <Reveal key={session.title} delay={index * 90}>
                 <SessionFlipCard
-                  number={`0${index + 1} / ${session.label}`}
+                  number={`0${index + 1}`}
+                  label={session.label}
                   title={session.title}
                   summary={session.summary}
                   description={session.description}
                   tone={sessionTones[index]}
+                  showHint={false}
                 />
               </Reveal>
             ))}

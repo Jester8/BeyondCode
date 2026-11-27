@@ -171,6 +171,20 @@ h6 {
   animation-play-state: paused;
 }
 
+.team-marquee {
+  overflow: hidden;
+}
+
+.team-marquee {
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.team-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: topic-scroll 48s linear infinite;
+}
+
 .session-flip-card {
   perspective: 1200px;
 }
@@ -178,7 +192,7 @@ h6 {
 .session-flip-inner {
   position: relative;
   display: block;
-  min-height: 340px;
+  min-height: 400px;
   transform-style: preserve-3d;
 }
 
@@ -190,22 +204,23 @@ h6 {
   justify-content: space-between;
   overflow: hidden;
   border-width: 1px;
-  border-radius: 1.5rem;
-  padding: 1.5rem;
+  border-radius: 0;
+  padding: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
 .session-flip-back {
   transform: rotateY(180deg);
+  padding: 1.5rem;
 }
 
 @media (min-width: 640px) {
   .session-flip-inner {
-    min-height: 300px;
+    min-height: 380px;
   }
 
-  .session-flip-face {
+  .session-flip-back {
     padding: 1.75rem;
   }
 }
@@ -299,6 +314,17 @@ h6 {
   }
 
   .partner-marquee-track > div:nth-child(2) {
+    display: none;
+  }
+
+  .team-marquee-track {
+    width: 100%;
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .team-marquee-track > div:nth-child(2) {
     display: none;
   }
 

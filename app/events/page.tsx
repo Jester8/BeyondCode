@@ -42,8 +42,8 @@ export default function EventsPage() {
                 Upcoming event
               </p>
             </div>
-            <article className="grid overflow-hidden rounded-[2rem] border border-black/[0.07] bg-white shadow-card lg:grid-cols-[1.05fr_0.95fr]">
-              <div className="relative min-h-[300px] bg-white sm:min-h-[440px] lg:min-h-[560px]">
+            <article className="grid overflow-hidden rounded-[2rem] border border-black/[0.07] bg-white shadow-card lg:grid-cols-[0.8fr_1.2fr]">
+              <div className="relative aspect-[3/4] bg-white lg:aspect-auto">
                 <Image
                   src="/assets/business-of-tech-event.png"
                   alt="Beyond Code: The Business of Tech neon conference poster with an auditorium audience"
@@ -53,7 +53,7 @@ export default function EventsPage() {
                   className="object-contain"
                 />
               </div>
-              <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
+              <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-10">
                 <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-tangerine">
                   Beyond Code 2027
                 </p>
@@ -76,7 +76,7 @@ export default function EventsPage() {
                     </div>
                   ))}
                 </dl>
-                <div className="mt-7 grid w-full max-w-[360px] grid-cols-2 gap-2 sm:flex sm:w-auto sm:max-w-none sm:gap-3">
+                <div className="mt-7 grid w-full max-w-[360px] grid-cols-1 gap-2 sm:flex sm:w-auto sm:max-w-none sm:gap-3">
                   <ButtonLink href="/register" fullWidth>
                     Reserve your seat
                   </ButtonLink>

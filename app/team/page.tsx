@@ -1,13 +1,121 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Reveal } from '@/components/reveal';
-import { ArrowUpRightIcon } from '@/components/icons';
 import { Container, EventCta, PageIntro } from '@/components/site';
 
 export const metadata = {
   title: 'Meet the Team',
   description: 'Meet the people bringing Beyond Code 2027 together.',
 };
+
+type TeamMember = {
+  name: string;
+  role: string;
+  category: string;
+  image?: string;
+  href?: string;
+  mark?: string;
+  accent: string;
+};
+
+const teamMembers: TeamMember[] = [
+  {
+    name: 'Olusanya Samuel',
+    role: 'Convener, Beyond Code',
+    category: 'Convener',
+    image: '/assets/sam-web.jpg',
+    href: '/speakers/olusanya-samuel',
+    accent: 'bg-[#6536D8]',
+  },
+  {
+    name: 'Abimbola Babatunde',
+    role: 'Operations Lead',
+    category: 'Operations',
+    image: '/assets/abimbola-babatunde.png',
+    href: '/team/abimbola-babatunde',
+    accent: 'bg-[#FFB7D5]',
+  },
+  {
+    name: 'Aboderin Daniel',
+    role: 'Partnerships Lead',
+    category: 'Partnerships',
+    mark: '01',
+    accent: 'bg-[#FF6547]',
+  },
+  {
+    name: 'Meet the team soon',
+    role: 'The people bringing Beyond Code 2027 together.',
+    category: 'Coming soon',
+    mark: '02',
+    accent: 'bg-[#C7C9F5]',
+  },
+  {
+    name: 'More team members soon',
+    role: 'Stay tuned for the next introduction.',
+    category: 'Coming soon',
+    mark: '03',
+    accent: 'bg-[#94CD01]',
+  },
+  {
+    name: 'New faces, soon',
+    role: 'More details will be shared shortly.',
+    category: 'Coming soon',
+    mark: '04',
+    accent: 'bg-[#F4AD36]',
+  },
+];
+
+function TeamCard({ member }: { member: TeamMember }) {
+  const card = (
+    <article className="group overflow-hidden border border-white/10 bg-white/[0.04] transition-transform duration-300 hover:-translate-y-1">
+      <div className={`relative aspect-[0.84] overflow-hidden ${member.accent}`}>
+        {member.image ? (
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            sizes="(max-width: 767px) 86vw, (max-width: 1023px) 44vw, 30vw"
+            className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
+          />
+        ) : (
+          <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+            <span className="absolute -right-5 -top-10 select-none text-[15rem] font-extrabold leading-none tracking-[-0.12em] text-ink/10 sm:text-[18rem]">
+              {member.mark}
+            </span>
+            <div className="absolute inset-x-7 bottom-8">
+              <span className="mb-3 block h-1 w-12 bg-ink/60" />
+              <p className="max-w-[8ch] text-4xl font-extrabold uppercase leading-[0.86] tracking-[-0.06em] text-ink sm:text-5xl">
+                Coming soon
+              </p>
+            </div>
+          </div>
+        )}
+        <span className="absolute right-4 top-4 bg-white px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.15em] text-ink [clip-path:polygon(7%_0,100%_0,93%_50%,100%_100%,7%_100%,0_50%)] sm:text-xs">
+          {member.category}
+        </span>
+      </div>
+      <div className="h-36 shrink-0 overflow-hidden p-5">
+        <h3 className="line-clamp-2 text-xl font-extrabold leading-tight tracking-tight text-white sm:text-2xl">
+          {member.name}
+        </h3>
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/60">
+          {member.role}
+        </p>
+      </div>
+    </article>
+  );
+
+  return member.href ? (
+    <Link
+      href={member.href}
+      aria-label={`View profile of ${member.name}`}
+      className="block w-[min(76vw,280px)] shrink-0 focus-visible:outline-white"
+    >
+      {card}
+    </Link>
+  ) : (
+    <div className="w-[min(76vw,280px)] shrink-0">{card}</div>
+  );
+}
 
 export default function TeamPage() {
   return (
@@ -18,71 +126,35 @@ export default function TeamPage() {
         description="Bringing the tech community together takes a team who care about what happens beyond the code."
       />
 
-      <section className="py-14 sm:py-20">
+      <section className="overflow-hidden bg-ink py-16 text-white sm:py-24">
         <Container>
-          <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-            <Reveal>
-              <Link
-                href="/speakers/olusanya-samuel"
-                aria-label="Meet Olusanya Samuel A., convener of Beyond Code"
-                className="group relative block aspect-[0.88] overflow-hidden rounded-[2rem] bg-ink"
-              >
-                <Image
-                  src="/assets/sam-web.jpg"
-                  alt="Olusanya Samuel A."
-                  fill
-                  sizes="(max-width: 768px) 100vw, 42vw"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="absolute inset-x-0 bottom-0 translate-y-2 p-6 text-white opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 sm:p-8">
-                  <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-lime">
-                    Convener & host
-                  </p>
-                  <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-                    Olusanya Samuel A.
-                  </h2>
-                </div>
-              </Link>
-            </Reveal>
-
-            <Reveal delay={90}>
-              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-violet">
-                The convener
-              </p>
-              <h2 className="mt-4 max-w-xl text-3xl font-extrabold leading-tight tracking-[-0.04em] text-ink sm:text-5xl">
-                Bringing the business side of tech into the room.
-              </h2>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-black/65 sm:text-lg">
-                Olusanya Samuel A. is a full-stack developer based in Ibadan
-                with more than five years of experience building web and
-                mobile products. He convenes Beyond Code to bring builders,
-                founders and operators together for practical conversations
-                about the work around the code.
-              </p>
-              <Link
-                href="/speakers/olusanya-samuel"
-                className="mt-7 inline-flex items-center gap-2 text-sm font-extrabold text-violet transition hover:gap-3"
-              >
-                More about Samuel <ArrowUpRightIcon />
-              </Link>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-paper py-14 sm:py-20">
-        <Container className="max-w-3xl text-center">
-          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-violet">
-            Growing the team
+          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-lime">
+            The people behind Beyond Code
           </p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-[-0.04em] text-ink sm:text-5xl">
-            More people behind the day, soon.
+          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl">
+            Meet the team bringing the room together.
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-black/60 sm:text-lg">
-            We’ll introduce additional Beyond Code team members here as their
-            roles and details are confirmed.
+          <p className="sr-only">
+            Beyond Code team: {teamMembers.map((member) => member.name).join(', ')}.
           </p>
+          <div
+            aria-label="Beyond Code team"
+            role="region"
+            className="team-marquee mt-10"
+          >
+            <div className="team-marquee-track" aria-hidden="true">
+              {[0, 1].map((copy) => (
+                <div
+                  key={copy}
+                  className="flex shrink-0 items-stretch gap-5 px-2"
+                >
+                  {teamMembers.map((member) => (
+                    <TeamCard key={`${copy}-${member.name}`} member={member} />
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
         </Container>
       </section>
 

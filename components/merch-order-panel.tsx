@@ -140,10 +140,10 @@ export function MerchOrderPanel({ product }: { product: MerchProduct }) {
           )}
           target="_blank"
           rel="noreferrer"
-          className="group mt-8 inline-flex min-h-14 items-center justify-center gap-3 whitespace-nowrap rounded-full bg-ink px-7 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-black"
+          className="group mt-6 inline-flex min-h-10 w-fit max-w-full items-center justify-center gap-2 whitespace-nowrap rounded-full bg-ink px-5 text-xs font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-black sm:mt-8 sm:min-h-11 sm:px-6 sm:text-sm"
         >
           Order now
-          <ArrowUpRightIcon className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <ArrowUpRightIcon className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:h-4 sm:w-4" />
         </a>
         <p className="mt-3 text-xs leading-relaxed text-black/45">
           Your selected color and price will be included in a WhatsApp message.

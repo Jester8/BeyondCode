@@ -61,7 +61,7 @@ export function MagneticLink({
             : `inline-flex items-center justify-center rounded-full bg-lime font-extrabold uppercase text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-[#a8dc24] hover:shadow-lg hover:shadow-black/10 ${
                 fullWidth
                   ? 'min-h-10 w-full whitespace-nowrap px-1 text-[9px] tracking-tight sm:min-h-12 sm:px-6 sm:text-sm sm:tracking-wide'
-                  : 'px-6 text-sm tracking-wide'
+                  : 'min-h-12 px-6 text-sm tracking-wide'
               }`
         }
       >

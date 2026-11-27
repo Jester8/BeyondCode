@@ -223,7 +223,8 @@ export default function HomePage() {
             {sessions.map((session, index) => (
               <Reveal key={session.title} delay={index * 70}>
                 <SessionFlipCard
-                  number={`0${index + 1} / ${session.label}`}
+                  number={`0${index + 1}`}
+                  label={session.label}
                   title={session.title}
                   summary={session.summary}
                   description={session.description}
